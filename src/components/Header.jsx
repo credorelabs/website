@@ -120,7 +120,7 @@ const WhyCredore = () => {
 
           <li className="">
             {/* <Link href="/use_cases"> */}
-            <Link href="/work_in_progress">
+            <Link href="/use_cases">
               <a className="block md:inline-block px-4 py-2 no-underline text-grey-darkest hover:bg-[#0B9173] br-5 hover:text-white hover:underline-offset-0 cursor-pointer b-1 br-5">
                 Use Cases
               </a>

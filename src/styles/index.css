@@ -1,4 +1,4 @@
-blockquote,
+/* blockquote,
 body,
 dd,
 dl,
@@ -12,8 +12,8 @@ li,
 ol[class],
 p,
 ul[class] {
-  margin: 0;
-}
+  margin: inherit;
+} */
 b,
 strong {
   font-weight: 700;
@@ -8046,13 +8046,6 @@ html {
   /* background-image: url(../../public/assets/images/blockchain-banner2.jpg); */
   background-size: cover;
   padding: 60px 0;
-}
-.arrow {
-  width: 0;
-  height: 0;
-  border-top: 24px solid transparent;
-  border-left: 40px solid #bc5635;
-  border-bottom: 24px solid transparent;
 }
 
 .menus {

@@ -1,13 +1,11 @@
 import React from "react";
 import VideoSection from "./VideoSection";
 import Image from "next/image";
-import techLeftImg from "../../public/assets/images/offerings/tech-left.png";
-import offering1 from "../../public/assets/images/offerings/invoice-discounting.png";
-import offering2 from "../../public/assets/images/offerings/exchange-standardizedand-digital-originaldocuments.png";
-import offering3 from "../../public/assets/images/offerings/true-decentralisation.png";
-import offering4 from "../../public/assets/images/offerings/digital-standardised.png";
-import offering5 from "../../public/assets/images/offerings/seamless-on-boarding.png";
-import offering6 from "../../public/assets/images/offerings/realtime-collaboration.png";
+import techLeftImg1 from "../../public/assets/images/offerings/tech-left-1.png";
+import techLeftImg2 from "../../public/assets/images/offerings/tech-left-2.png";
+import techLeftImg3 from "../../public/assets/images/offerings/tech-left-3.png";
+import techLeftImg4 from "../../public/assets/images/offerings/tech-left-4.png";
+import arrow from "../../public/assets/images/offerings/arrow.png";
 
 const Technology = () => {
   return (
@@ -31,39 +29,62 @@ const Technology = () => {
               How Credore Infrastructure Works?
             </div>
 
-            <div className="flex gap-5">
-              <div className="w-full">
-                <Image src={techLeftImg} alt="" objectFit="cover" />
-              </div>
-              <div className="flex flex-col gap-5 w-full ">
-                <div className="flex items-center gap-5 p-5 bg-[#DEF] w-full">
-                  <Image src={offering1} alt="" objectFit="cover" />
+            <div className="flex flex-col gap-5 w-full ">
+              <div className="flex gap-5">
+                <Image src={techLeftImg1} alt="" objectFit="cover" />
 
-                  <p className="text-[#29564b] text-left font-medium text-sm">
-                    Invoice discounting & Export Factoring (with PEPPOL standard
-                    e-Invoicing)
-                  </p>
-                </div>
-
-                <div className="flex items-center gap-5 p-5 bg-[#DEF] w-full">
-                  <Image src={offering2} alt="" objectFit="cover" />
-
-                  <p className="text-[#29564b] text-left font-medium text-sm">
-                    Exchange standardized and digital original documents
-                  </p>
-                </div>
-
-                <div className="flex items-center gap-5 p-5 bg-[#DEF] w-full">
-                  <Image src={offering3} alt="" objectFit="cover" />
-
-                  <p className="text-[#29564b] text-left font-medium text-sm">
-                    True decentralisation and high scalability using public
-                    blockchain without revealing any sensitive data
+                <div className="flex gap-1 w-1/2 items-center justify-end">
+                  <div className="left-arrow"></div>
+                  <p className="text-white p-3 bg-[#24554ab0] text-left font-medium text-xsm">
+                    Common repository of standardised data andbusiness workflow
+                    formats to facilitate data sharing,reporting, due diligence
+                    and compliancerequirements
                   </p>
                 </div>
               </div>
 
-              
+              <div className="flex gap-5">
+                <Image src={techLeftImg2} alt="" objectFit="cover" />
+                <div className="flex gap-1 w-1/2 items-center justify-end">
+                  <div className="left-arrow"></div>
+                  <p className="text-white p-3 bg-[#24554ab0] text-left font-medium text-xsm">
+                    Off chain exchange of standardised sensitive dataand
+                    business logic execution between multiplestakeholders.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-5">
+                <Image src={arrow} alt="" objectFit="cover" />
+                <div className="flex items-center gap-5 p-3 my-2 w-1/2"></div>
+              </div>
+
+              <div className="flex gap-5">
+                <Image src={techLeftImg3} alt="" objectFit="cover" />
+                <div className="flex gap-1 w-1/2 items-center justify-end">
+                  <div className="left-arrow"></div>
+                  <p className="text-white p-3 bg-[#24554ab0] text-left font-medium text-xsm">
+                    zkCredore generates zero knowledge proofs againstprivate
+                    data and private business logic.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-5">
+                <Image src={arrow} alt="" objectFit="cover" />
+                <div className="flex items-center gap-5 p-3 my-2 w-1/2"></div>
+              </div>
+
+              <div className="flex gap-5">
+                <Image src={techLeftImg4} alt="" objectFit="cover" />
+                <div className="flex gap-1 w-1/2 items-center justify-end">
+                  <div className="left-arrow"></div>
+                  <p className="text-white p-3 bg-[#24554ab0] text-left font-medium text-xsm">
+                    Verifier in the blockchain verifies the correctness ofoff
+                    chain execution without private data andbusiness logic.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
