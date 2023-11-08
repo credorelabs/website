@@ -74,7 +74,7 @@ const Team = () => {
           </div>
         </div>
 
-        <div className="flex gap-3 items-center">
+        <div className="tab:flex gap-3 items-center">
           <div className="items-center bg-gray-50 rounded-md shadow sm:flex dark:bg-gray-800 dark:border-gray-700 w-full">
             <a href="#" className="p-3">
               <Image

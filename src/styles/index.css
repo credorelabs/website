@@ -94,7 +94,8 @@ h1 {
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
     Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
     Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-  font-size: 2rem;
+  /* font-size: 2rem; */
+  font-size: 1.5rem;
   font-weight: 600;
   line-height: 1.1;
 }
@@ -7128,6 +7129,8 @@ html {
   .banner-details .knowMore {
     width: calc(100% - 25%);
   }
+  .homeBannerSection{padding:10px 20px;width:100%;}
+  h1{font-size:20px; margin-top:1rem 0;}
 }
 
 .facts-section {
@@ -7190,7 +7193,7 @@ html {
     border: none;
   }
   .facts-section label {
-    font-size: 30px;
+    font-size: 18px;
   }
   .facts-section .text {
     font-size: 14px;
@@ -7338,7 +7341,7 @@ html {
     font-size: 18px;
   }
   .detailSectn .detailTxt p {
-    font-size: 14px;
+    /* font-size: 14px; */
     color: inherit;
   }
 }
@@ -7839,6 +7842,7 @@ html {
 }
 .footer .receiveUpdates button {
   font-size: medium;
+  max-width:140px;
 }
 .footer .copyrightSectn {
   padding-top: 20px;
@@ -7892,6 +7896,9 @@ html {
   border-radius: 3px;
 }
 
+@media screen and (max-width: 840px) {
+  .footer .receiveUpdates input{width:90%;}
+}
 @media screen and (max-width: 540px) {
   .linksSectn {
     flex-direction: column;
@@ -7936,7 +7943,7 @@ html {
   background-position: center center !important;
   background-repeat: no-repeat !important;
   border-radius: 30px;
-  margin: 3rem auto !important;
+  margin: 1rem auto !important;
   max-width: 100%;
 }
 
@@ -8111,7 +8118,7 @@ button span {
     0 4px 6px -2px rgba(71, 63, 79, 0.16);
   font-size: 0.875rem;
   z-index: 9999;
-  min-width: 10rem;
+  min-width: 7.5rem;
   list-style: none;
   background-color: #fff;
   border-radius: 0.5rem;
@@ -8208,4 +8215,30 @@ button span {
   border:1px solid #95a7a2;
   padding:1rem;
   border-radius: 50%;
+}
+
+.left-arrow {
+  width: 0;
+  height: 0;
+  border-top: 36px solid transparent;
+  border-right: 64px solid rgb(36 85 74 / 69%);
+  border-bottom: 36px solid transparent;
+  /* border-top: 24px;
+    border-right: 40px;
+    border-bottom: 24px; */
+}
+.right-arrow {
+  width: 0;
+  height: 0;
+  border-top: 24px solid transparent;
+  border-left: 40px solid rgb(36 85 74 / 69%);
+  border-bottom: 24px solid transparent;
+}
+
+.down-arrow {
+  width: 0;
+  height: 0;
+  border-top: 40px solid rgb(36 85 74 / 69%);
+  border-left: 24px solid transparent;
+  border-right: 24px solid transparent;
 }

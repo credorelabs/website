@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import About from "../components/About";
 import Community from "../components/Community";
@@ -14,9 +14,35 @@ import Footer from "../components/Footer";
 import SupportedBy from "../components/SupportedBy";
 import ManageCookies from "../components/ManageCookies";
 
-
 const App = () => {
+  const [windowSize, setWindowSize] = useState({
+    width: undefined,
+    height: undefined,
+  });
+
+  useEffect(() => {
+    // only execute all the code below in client side
+    // Handler to call on window resize
+    function handleResize() {
+      // Set window width/height to state
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+
+    // Add event listener
+    window.addEventListener("resize", handleResize);
+
+    // Call handler right away so state gets updated with initial window size
+    handleResize();
+
+    // Remove event listener on cleanup
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
+    // <div className="bg-background" style={{ width: windowSize.width }}>
     <div className="bg-background">
       <Head>
         <title>
@@ -38,7 +64,7 @@ const App = () => {
         <About />
       </LazyShow>
 
-      <LazyShow>
+      <LazyShow id="solutions">
         <Solutions />
       </LazyShow>
 
@@ -46,24 +72,21 @@ const App = () => {
         <WhyCredore />
       </LazyShow> */}
 
-      <LazyShow>
+      <LazyShow id="supportedBy">
         <SupportedBy />
       </LazyShow>
 
-      <LazyShow>
+      <LazyShow id="contact">
         <Contact />
       </LazyShow>
 
-      <LazyShow>
+      <LazyShow id="footer">
         <Footer />
       </LazyShow>
 
-      <LazyShow>
+      <LazyShow id="community">
         <Community />
       </LazyShow>
-
-
-
     </div>
   );
 };

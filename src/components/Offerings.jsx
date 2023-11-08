@@ -10,9 +10,9 @@ import offering6 from "../../public/assets/images/offerings/realtime-collaborati
 
 const Offerings = () => {
   return (
-    <section className="section why-section mb-20">
+    <section className="section why-section">
       <div className="container">
-        <div className="why-section flex gap-4 items-center px-10">
+        <div className="flex gap-4 items-center tab:px-10">
           <div className="">
             <div className="m-10">
               {/* <h1>Credore&apos;s Offerings</h1> */}
@@ -31,7 +31,7 @@ const Offerings = () => {
             </div>
 
             <div id="content" className="flex flex-col gap-5">
-              <div className="flex gap-5 w-full ">
+              <div className="flex flex-col tab:flex-row gap-5 w-full  ">
                 <div className="flex flex-col items-center gap-2 p-5 bg-[#DEF] w-full">
                   <Image src={offering1} alt="" objectFit="cover" />
 
@@ -60,7 +60,7 @@ const Offerings = () => {
                 </div>
               </div>
 
-              <div className="flex gap-5 w-full ">
+              <div className="flex flex-col tab:flex-row gap-5 w-full  ">
                 <div className="flex flex-col items-center gap-2 p-5 bg-[#DEF] w-full">
                   <Image src={offering4} alt="" objectFit="cover" />
 

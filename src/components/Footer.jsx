@@ -80,16 +80,16 @@ const Footer = () => {
                 <h1 className="heading mt-5">
                   Receive Updates and News from Credore
                 </h1>
-                <div className="receiveUpdates flex items-center gap-4 py-0">
+                <div className="receiveUpdates flex flex-col dsk:flex-row gap-4 py-0">
                   <input
                     type="text"
-                    className="p-2 py-1 border-1 md:round border-[#F15928] outline-none text-sm br-5"
+                    className="p-2 py-1 border-[0.5px] md:round border-[#F15928] outline-none text-sm br-5"
                     placeholder="Enter Your Email"
                     value=""
                     onChange={() => {}}
                   />
                   <button
-                    className="px-4 py-1 text-sm flex-shrink-0 text-F15928 bg-[#FFF]"
+                    className="px-4 py-1 text-sm flex-shrink-0 text-F15928 bg-[#F15928]"
                     type="submit"
                   >
                     Subscribe
@@ -100,7 +100,10 @@ const Footer = () => {
           </div>
 
           <div className="copyrightSectn">
-            <div>&#169; Copyright 2023 Credore - All rights Reserved</div>
+            <div>
+              &#169; Copyright {new Date().getFullYear()} Credore - All rights
+              Reserved
+            </div>
             <div className="mediaLinks items-center">
               <ul className="otherLinks">
                 <li>

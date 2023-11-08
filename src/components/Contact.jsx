@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { FaGithub, FaDiscord, FaMediumM, FaTwitter } from "react-icons/fa";
 import { MdPlace, MdLocationPin, MdPhone, MdEmail } from "react-icons/md";
 import {
@@ -13,6 +13,7 @@ import {
 } from "formik";
 import Form from "./RequestModal";
 import * as Yup from "yup";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const [email, setEmail] = useState("");
@@ -24,6 +25,8 @@ const Contact = () => {
   const [postalCode, setPostalCode] = useState("");
   const [country, setCountry] = useState("");
   const [isOpen, setIsOpen] = useState(false);
+
+  const form = useRef();
 
   function closeModal() {
     setIsOpen(false);
@@ -65,11 +68,31 @@ const Contact = () => {
         org: values.org,
         country: values.country,
         query: values.query,
+        to_name: "Team",
       };
 
       try {
         // Send Email
-        console.log("formData: ", formData);
+        // e.preventDefault(); // prevents the page from reloading when you hit “Send”
+
+        emailjs
+          .sendForm(
+            "service_7cp4rhl",
+            "template_iq5u1yc",
+            form.current,
+            "h38-IC67AZT_NCMwl"
+          )
+          .then(
+            (result) => {
+              alert("Your message is sent successfully");
+              // show the user a success message
+            },
+            (error) => {
+              alert("Error in sending message, Please try again later!");
+              // show the user an error
+            }
+          );
+
         // formik.resetForm();
       } catch (error) {
         console.log(error);
@@ -81,29 +104,29 @@ const Contact = () => {
     <section className="section contact-section" id="contact">
       <div className="container">
         <div className="p-5">
-          <div className="p-5 pl-0 text-center pb-10">
+          <div className="p-5 pl-0 text-center pb-2 note:pb-4 lap:pb-10">
             <h1 className="">Contact Us</h1>
           </div>
 
-          <div className="detailSectn flex gap-10 justify-between">
+          <div className="detailSectn tab:flex gap-10 justify-between">
             <div className="w-full">
-              <h5 className="text-[#29564b] mb-4 border-b border-[#F15928]">Contact Info</h5>
+              <h5 className="text-[#29564b] mb-4 border-b border-[#F15928]">
+                Contact Info
+              </h5>
 
               <div className="flex gap-5">
                 <MdPlace size={42} />
                 <div className="flex flex-col gap-2">
-
                   <h5 className="font-medium ">Branch Office</h5>
                   <p className="font-medium text-xsm text-[#29564b] ml-2">
-                  108 A ,108 B, KIIT-Technology Business Incubator Campus 11, KIIT-DU, Bhubaneswar, Khordha, Odisha, India-751024
+                    108 A ,108 B, KIIT-Technology Business Incubator Campus 11,
+                    KIIT-DU, Bhubaneswar, Khordha, Odisha, India-751024
                   </p>
 
-                  
                   <h5 className="font-medium">Registered Office</h5>
                   <p className="font-medium text-xsm text-[#29564b] ml-2">
                     Bhumkar Chowk, Pune, Maharashtra - 411057
                   </p>
-
                 </div>
               </div>
 
@@ -164,8 +187,13 @@ const Contact = () => {
               <form
                 className="flex flex-col w-full gap-1"
                 onSubmit={formik.handleSubmit}
+                ref={form}
               >
                 <div className="py-2">
+                  <input type="hidden"
+                    name="from_email"
+                    value={'no-reply@credore.xyz'}
+                    />
                   <input
                     className={`w-full rounded-sm border bg-gray-100 px-4 py-2 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 lg:w-full ${
                       formik.touched.name && Boolean(formik.errors.name)
@@ -184,8 +212,8 @@ const Contact = () => {
                   </span> */}
                 </div>
 
-                <div className="py-2 flex items-center gap-4">
-                  <div className="w-1/2">
+                <div className="tab:py-2 tab:flex items-center gap-4">
+                  <div className="w-full tab:w-1/2 py-2 tab:py-0">
                     <input
                       className={`block w-full rounded-sm border px-4 py-2 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 lg:w-full ${
                         formik.touched.email && Boolean(formik.errors.email)
@@ -204,7 +232,7 @@ const Contact = () => {
                     </span> */}
                   </div>
 
-                  <div className="w-1/2">
+                  <div className="w-full tab:w-1/2 py-2 tab:py-0">
                     <input
                       className={`block w-full rounded-sm border px-4 py-2 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 lg:w-full ${
                         formik.touched.phone && Boolean(formik.errors.phone)
@@ -224,8 +252,8 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className="py-2 flex items-center gap-4">
-                  <div className="w-1/2">
+                <div className="tab:py-2 tab:flex items-center gap-4">
+                  <div className="w-full tab:w-1/2 py-2 tab:py-0">
                     <input
                       className={`block w-full rounded-sm border px-4 py-2 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 lg:w-full ${
                         formik.touched.org && Boolean(formik.errors.org)
@@ -244,7 +272,7 @@ const Contact = () => {
                     </span> */}
                   </div>
 
-                  <div className="w-1/2">
+                  <div className="w-full tab:w-1/2 py-2 tab:py-0">
                     <input
                       className={`block w-full rounded-sm border px-4 py-2 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 lg:w-full ${
                         formik.touched.country && Boolean(formik.errors.country)
@@ -271,8 +299,8 @@ const Contact = () => {
                         ? " border-[#F15928] text-red-700 bg-[#FFFFFF]"
                         : "border-[#81A79D] bg-[#FEFEFE]"
                     }px-5 py-2 border-1 border-solid p-2 placeholder:text-slate-400 text-sm opacity-90 focus:border-gray-500 focus:border-1 peer`}
-                    type="text"
-                    query="query"
+                    // type="text"
+                    name="query"
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     value={formik.values.query}

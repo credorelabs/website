@@ -61,32 +61,32 @@ const UseCases = () => {
   };
   return (
     <>
-      <section className="section why-section mb-20">
+      <section className="section why-section mb-2 tab:mb-20">
         <div className="container">
-          <div className="row p-5">
-            <h1 className="font-bold text-xl">
+          <div className="row p-2 dsk:p-5">
+            <h1 className="font-bold">
               Use Case-1: Non-Recourse Export Factoring
             </h1>
-            <div className="why-section flex flex-col gap-4 items-center px-10">
+            <div className="flex flex-col gap-10 items-center px-2">
               <div className="w-full">
-                <div className="m-10"></div>
-                <div className="w-full border-[15px] border-[#5D7D72] rounded-lg p-5 m-2 shadow-[-15px_15px_0px_0px_#DC927A] ">
+                <div className="m-3 dsk:m-10"></div>
+                <div className="w-full border-[5px] dsk:border-[10px] border-[#DC927A] rounded-lg p-2 dsk:p-5 m-2 shadow-[-7px_7px_0px_0px_#5D7D72] dsk:shadow-[-12px_12px_0px_0px_#5D7D72]">
                   <span className="font-bold">Scenario:</span>
                   <p className="font-normal ml-1">
-                    Imagine a small exporting company called &quot;Global Traders
-                    Private Ltd.&quot; based in India. Global Traders specializes in
-                    manufacturing and exporting high-quality textiles to buyers
-                    around the world. They have recently secured a significant
-                    order from a buyer in Europe, but they are facing a
-                    challenge: they need working capital to fulfill the order
-                    and cover production costs.
+                    Imagine a small exporting company called &quot;Global
+                    Traders Private Ltd.&quot; based in India. Global Traders
+                    specializes in manufacturing and exporting high-quality
+                    textiles to buyers around the world. They have recently
+                    secured a significant order from a buyer in Europe, but they
+                    are facing a challenge: they need working capital to fulfill
+                    the order and cover production costs.
                   </p>
                 </div>
               </div>
 
-              <div className="flex gap-1">
+              <div className="flex flex-col dsk:flex-row gap-4 dsk:gap-1">
                 <div
-                  className="w-full flex flex-col h-[580px] border rounded-t-lg bg-[#EFFFFF]"
+                  className="w-full flex flex-col min-h-full border rounded-t-lg bg-[#EFFFFF]"
                   id="challenges"
                 >
                   <div className="w-full bg-[#5D7D72] p-2 m-0 rounded-t-lg ">
@@ -94,7 +94,7 @@ const UseCases = () => {
                   </div>
 
                   <div className="">
-                    <p className="text-xsm font-medium p-2">
+                    <p className="text-sm font-medium p-2">
                       Global Traders is dealing with a common challenge that
                       many exporters face - the need for immediate working
                       capital to fulfill large export orders. Traditional
@@ -103,13 +103,13 @@ const UseCases = () => {
                       and shipment.
                     </p>
 
-                    <p className="text-xsm font-medium p-2">
+                    <p className="text-sm font-medium p-2">
                       Exporting presents its own set of challenges that can
                       hinder growth and financial stability. These challenges
                       include:
                     </p>
                     <ul className="bg-[#EEE] p-2 border mx-1 rounded-sm">
-                      <li className="text-xsm font-bold mt-2 flex items-center">
+                      <li className="text-sm font-bold mt-2 flex items-center justify-between">
                         1. Limited Access to Finance:
                         {show1 === "none" && (
                           <VscExpandAll
@@ -120,7 +120,7 @@ const UseCases = () => {
                         )}
                       </li>
 
-                      <li className="text-xsm font-bold mt-2 flex items-center">
+                      <li className="text-sm font-bold mt-2 flex items-center justify-between">
                         2. Conditional &apos;Non-Recourse&apos; Advances:
                         {show2 === "none" && (
                           <VscExpandAll
@@ -131,7 +131,7 @@ const UseCases = () => {
                         )}
                       </li>
 
-                      <li className="text-xsm font-bold mt-2 flex items-center">
+                      <li className="text-sm font-bold mt-2 flex items-center justify-between">
                         3. Ineffectiveness of Export Factoring Solutions:
                         {show3 === "none" && (
                           <VscExpandAll
@@ -141,7 +141,7 @@ const UseCases = () => {
                           />
                         )}
                       </li>
-                      <li className="text-xsm font-bold mt-2 flex items-center">
+                      <li className="text-sm font-bold mt-2 flex items-center justify-between">
                         4. Reliance on Overdrafts:
                         {show4 === "none" && (
                           <VscExpandAll
@@ -151,7 +151,7 @@ const UseCases = () => {
                           />
                         )}
                       </li>
-                      <li className="text-xsm font-bold mt-2 flex items-center">
+                      <li className="text-sm font-bold mt-2 flex items-center justify-between">
                         5. Inefficiency of Traditional Trade Finance:
                         {show5 === "none" && (
                           <VscExpandAll
@@ -161,7 +161,7 @@ const UseCases = () => {
                           />
                         )}
                       </li>
-                      <li className="text-xsm font-bold mt-2 flex items-center">
+                      <li className="text-sm font-bold mt-2 flex items-center justify-between">
                         6. Inadequate Risk Mitigation:
                         {show6 === "none" && (
                           <VscExpandAll
@@ -173,7 +173,7 @@ const UseCases = () => {
                       </li>
                     </ul>
 
-                    <p className="text-xsm font-medium p-2">
+                    <p className="text-sm font-medium p-2">
                       Navigating these challenges demands innovative solutions
                       that prioritize financial accessibility, risk management,
                       and efficient trade processes. At Credore, we aim to
@@ -185,13 +185,18 @@ const UseCases = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center">
-                  <div className="text-white p-3 bg-[#24554ab0] text-left font-medium text-xsm"></div>
+                <div className="hidden dsk:flex items-center">
+                  <div className="text-white p-3 bg-[#24554ab0] text-left font-medium text-sm"></div>
                   <div className="right-arrow"></div>
                 </div>
 
+                <div className="flex flex-col dsk:hidden items-center">
+                  <div className="text-white p-3 bg-[#24554ab0] text-left font-medium text-sm"></div>
+                  <div className="down-arrow"></div>
+                </div>
+
                 <div
-                  className="w-full flex flex-col h-[580px] border rounded-t-lg bg-[#FFEBE5]"
+                  className="w-full flex flex-col min-h-full border rounded-t-lg bg-[#FFEBE5]"
                   id="solutions"
                 >
                   <div className="w-full bg-[#5D7D72] p-2 m-0 rounded-t-lg">
@@ -199,14 +204,14 @@ const UseCases = () => {
                   </div>
 
                   <div className="">
-                    <p className="text-xsm font-medium p-2">
+                    <p className="text-sm font-medium p-2">
                       Global Traders turns to Credore&apos;s Export Factoring
                       platform for a solution. They decide to use non-recourse
                       export factoring, a financing arrangement that provides
                       them with the necessary funds without taking on the risk
                       of buyer default.
                     </p>
-                    <p className="text-xsm font-medium  p-2">
+                    <p className="text-sm font-medium  p-2">
                       At Credore, we understand the challenges faced by
                       businesses in the realm of export factoring. That&apos;s
                       why we&apos;ve designed a transformative solution that not
@@ -216,7 +221,7 @@ const UseCases = () => {
                     </p>
 
                     <ul className="bg-[#EEE] p-2 border mx-1 rounded-sm">
-                      <li className="text-xsm font-bold mt-2 flex items-center">
+                      <li className="text-sm font-bold mt-2 flex items-center justify-between">
                         1. Increased Access to Finance:
                         {show7 === "none" && (
                           <VscExpandAll
@@ -227,7 +232,7 @@ const UseCases = () => {
                         )}
                       </li>
 
-                      <li className="text-xsm font-bold mt-2 flex items-center">
+                      <li className="text-sm font-bold mt-2 flex items-center justify-between">
                         2. Enhanced Operational Efficiency:
                         {show8 === "none" && (
                           <VscExpandAll
@@ -238,7 +243,7 @@ const UseCases = () => {
                         )}
                       </li>
 
-                      <li className="text-xsm font-bold mt-2 flex items-center">
+                      <li className="text-sm font-bold mt-2 flex items-center justify-between">
                         3. Advanced Risk Mitigation:
                         {show9 === "none" && (
                           <VscExpandAll
@@ -265,13 +270,15 @@ const UseCases = () => {
             </div>
           </div>
 
-          <div className="row p-5">
-            <h1 className="font-bold text-xl py-5">
+          <div className="row p-2 dsk:p-5">
+            <h1 className="font-bold py-2 dsk:py-5">
               How Credore&apos;s Non-Recourse Export Factoring Works:
             </h1>
-            <div className="flex gap-2 p-4 border-2 border-gray-500 rounded-md">
-              {/* <Image src={exporter} alt="" /> */}
-              <Image src={useCaseFlow} alt="" className="rounded-md" />
+            <div className="flex gap-2 p-2">
+              <div className="p-2 pb-1 border-[0.5px] border-gray-500 rounded-md">
+                {/* <Image src={exporter} alt="" /> */}
+                <Image src={useCaseFlow} alt="" className="rounded-md" />
+              </div>
             </div>
 
             <div className="flex gap-2 p-4">
@@ -316,7 +323,7 @@ const UseCases = () => {
           <div className="row px-5">
             <h1 className="font-bold text-xl py-2">Benefits:</h1>
 
-            <div className="p-4 flex flex-col gap-2">
+            <div className="p-1 dsk:p-4 flex flex-col gap-2">
               <p className="font-normal mb-2">
                 1. Global Traders receives the much-needed working capital
                 quickly, allowing them to fulfill the order on time.
@@ -339,10 +346,10 @@ const UseCases = () => {
       </section>
 
       <div
-        className="fixed w-1/2 top-[25%] left-[25%] py-1 px-4 pb-6 bg-gray-100 border rounded-md"
+        className="fixed w-full dsk:w-3/4 m-auto dsk:left-[12.5%] h-full dsk:h-3/4 top-0 dsk:top-[12.5%] tab:py-10 px-4 sml:py-1 tab:px-10 bg-gray-100 border rounded-md overflow-auto"
         style={{ display: show1 }}
       >
-        <span className="text-xsm font-normal">
+        <span className="text-sm tab:text-lg font-normal">
           <AiFillCloseCircle
             size={24}
             onClick={handleShow1}
@@ -355,10 +362,10 @@ const UseCases = () => {
       </div>
 
       <div
-        className="fixed w-1/2 top-[25%] left-[25%] py-1 px-4 pb-6 bg-gray-100 border rounded-md"
+        className="fixed w-full dsk:w-3/4 m-auto dsk:left-[12.5%] h-full dsk:h-3/4 top-0 dsk:top-[12.5%] tab:py-10 px-4 sml:py-1 tab:px-10 bg-gray-100 border rounded-md overflow-auto"
         style={{ display: show2 }}
       >
-        <span className="text-xsm font-normal">
+        <span className="text-sm tab:text-lg font-normal">
           <AiFillCloseCircle
             size={24}
             onClick={handleShow2}
@@ -371,36 +378,36 @@ const UseCases = () => {
       </div>
 
       <div
-        className="fixed w-1/2 top-[25%] left-[25%] py-1 px-4 pb-6 bg-gray-100 border rounded-md"
+        className="fixed w-full dsk:w-3/4 m-auto dsk:left-[12.5%] h-full dsk:h-3/4 top-0 dsk:top-[12.5%] tab:py-10 px-4 sml:py-1 tab:px-10 bg-gray-100 border rounded-md overflow-auto"
         style={{ display: show3 }}
       >
-        <span className="text-xsm font-normal">
+        <span className="text-sm tab:text-lg font-normal">
           <AiFillCloseCircle
             size={24}
             onClick={handleShow3}
             className="ml-4 sticky bottom-[82%] left-[100%]"
           />
           <ul className="ml-2">
-            <li className="text-xsm font-medium mt-2">
-              <i>• Overseas Receivables Restrictions:</i> Banks and Financial
+            <li className="text-sm mt-2">
+              <b>• Overseas Receivables Restrictions:</b> Banks and Financial
               Institutions often have stricter policies for overseas receivables
               compared to domestic ones, affecting financing possibilities.
             </li>
-            <li className="text-xsm font-medium mt-2">
+            <li className="text-sm mt-2">
               <b>• Due Diligence and Two-Factor Model:</b> Verification of debt
               enforceability in importing countries requires due diligence,
               often involving local correspondents using a two-factor model.
             </li>
-            <li className="text-xsm font-medium mt-2">
+            <li className="text-sm mt-2">
               <b>• Preference for Whole Turnover Approach:</b> The practice of a
               whole turnover approach, supported by an all-asset debenture, adds
               complexity.
             </li>
-            <li className="text-xsm font-medium mt-2">
+            <li className="text-sm mt-2">
               <b>• Dilution Risk:</b> Banks&apos; title rights to receivables
               hinge on contract terms&apos; compliance, posing a dilution risk.
             </li>
-            <li className="text-xsm font-medium mt-2">
+            <li className="text-sm mt-2">
               <b>• Limited Financing Availability:</b> The combination of
               dilution risk, stringent invoice criteria, and advance rate limits
               restrict financing to 50-60% of total invoice value.
@@ -410,10 +417,10 @@ const UseCases = () => {
       </div>
 
       <div
-        className="fixed w-1/2 top-[25%] left-[25%] py-1 px-4 pb-6 bg-gray-100 border rounded-md"
+        className="fixed w-full dsk:w-3/4 m-auto dsk:left-[12.5%] h-full dsk:h-3/4 top-0 dsk:top-[12.5%] tab:py-10 px-4 sml:py-1 tab:px-10 bg-gray-100 border rounded-md overflow-auto"
         style={{ display: show4 }}
       >
-        <span className="text-xsm font-normal">
+        <span className="text-sm tab:text-lg font-normal">
           <AiFillCloseCircle
             size={24}
             onClick={handleShow4}
@@ -426,10 +433,10 @@ const UseCases = () => {
       </div>
 
       <div
-        className="fixed w-1/2 top-[20%] left-[25%] py-1 px-4 pb-6 bg-gray-100 border rounded-md"
+        className="fixed w-full dsk:w-3/4 m-auto dsk:left-[12.5%] h-full dsk:h-3/4 top-0 dsk:top-[12.5%] tab:py-10 px-4 sml:py-1 tab:px-10 bg-gray-100 border rounded-md overflow-auto"
         style={{ display: show5 }}
       >
-        <span className="text-xsm font-normal">
+        <span className="text-sm tab:text-lg font-normal">
           <AiFillCloseCircle
             size={24}
             onClick={handleShow5}
@@ -442,10 +449,10 @@ const UseCases = () => {
       </div>
 
       <div
-        className="fixed w-1/2 top-[25%] left-[25%] py-1 px-4 pb-6 bg-gray-100 border rounded-md"
+        className="fixed w-full dsk:w-3/4 m-auto dsk:left-[12.5%] h-full dsk:h-3/4 top-0 dsk:top-[12.5%] tab:py-10 px-4 sml:py-1 tab:px-10 bg-gray-100 border rounded-md overflow-auto"
         style={{ display: show6 }}
       >
-        <span className="text-xsm font-normal">
+        <span className="text-sm tab:text-lg font-normal">
           <AiFillCloseCircle
             size={24}
             onClick={handleShow6}
@@ -458,17 +465,17 @@ const UseCases = () => {
       </div>
 
       <div
-        className="fixed w-1/2 top-[25%] left-[25%] py-1 px-4 pb-6 bg-gray-100 border rounded-md"
+        className="fixed w-full dsk:w-3/4 m-auto dsk:left-[12.5%] h-full dsk:h-3/4 top-0 dsk:top-[12.5%] tab:py-10 px-4 sml:py-1 tab:px-10 bg-gray-100 border rounded-md overflow-auto"
         style={{ display: show7 }}
       >
-        <span className="text-xsm font-normal">
+        <span className="text-sm tab:text-lg font-normal">
           <AiFillCloseCircle
             size={24}
             onClick={handleShow7}
             className="ml-4 sticky bottom-[82%] left-[100%]"
           />
           <ul className="ml-2">
-            <li className="text-xsm font-medium mt-2">
+            <li className="text-sm mt-2">
               <i>
                 <b>• Unlocking Collection Benefits:</b>
               </i>{" "}
@@ -481,7 +488,7 @@ const UseCases = () => {
               buyer&apos;s ability to evade payment due to contractual disputes.
             </li>
 
-            <li className="text-xsm font-medium mt-2">
+            <li className="text-sm mt-2">
               <i>
                 <b>• Streamlined Due Diligence:</b>
               </i>{" "}
@@ -491,7 +498,7 @@ const UseCases = () => {
               confidence in cross-border transactions.
             </li>
 
-            <li className="text-xsm font-medium mt-2">
+            <li className="text-sm mt-2">
               <i>
                 <b>• Empowering &apos;Non-Recourse&apos; Finance:</b>
               </i>{" "}
@@ -505,17 +512,17 @@ const UseCases = () => {
       </div>
 
       <div
-        className="fixed w-1/2 top-[25%] left-[25%] py-1 px-4 pb-6 bg-gray-100 border rounded-md"
+        className="fixed w-full dsk:w-3/4 m-auto dsk:left-[12.5%] h-full dsk:h-3/4 top-0 dsk:top-[12.5%] tab:py-10 px-4 sml:py-1 tab:px-10 bg-gray-100 border rounded-md overflow-auto"
         style={{ display: show8 }}
       >
-        <span className="text-xsm font-normal">
+        <span className="text-sm tab:text-lg font-normal">
           <AiFillCloseCircle
             size={24}
             onClick={handleShow8}
             className="ml-4 sticky bottom-[82%] left-[100%]"
           />
           <ul className="ml-2">
-            <li className="text-xsm font-medium mt-2">
+            <li className="text-sm mt-2">
               <i>
                 <b>• Seamless Digital Workflow:</b>
               </i>{" "}
@@ -530,17 +537,17 @@ const UseCases = () => {
       </div>
 
       <div
-        className="fixed w-1/2 top-[25%] left-[25%] py-1 px-4 pb-6 bg-gray-100 border rounded-md"
+        className="fixed w-full dsk:w-3/4 m-auto dsk:left-[12.5%] h-full dsk:h-3/4 top-0 dsk:top-[12.5%] tab:py-10 px-4 sml:py-1 tab:px-10 bg-gray-100 border rounded-md overflow-auto"
         style={{ display: show9 }}
       >
-        <span className="text-xsm font-normal">
+        <span className="text-sm tab:text-lg font-normal">
           <AiFillCloseCircle
             size={24}
             onClick={handleShow9}
             className="ml-4 sticky bottom-[82%] left-[100%]"
           />
           <ul className="ml-2">
-            <li className="text-xsm font-medium mt-2">
+            <li className="text-sm mt-2">
               <i>
                 <b>• Unyielding Payment Liability:</b>
               </i>{" "}
@@ -549,7 +556,7 @@ const UseCases = () => {
               disputes cannot be wielded to avoid payment obligations.
             </li>
 
-            <li className="text-xsm font-medium mt-2">
+            <li className="text-sm mt-2">
               <i>
                 <b>• Solid Prima Facie Evidence:</b>
               </i>{" "}
@@ -558,7 +565,7 @@ const UseCases = () => {
               the foundation for claims under the credit insurance policy.
             </li>
 
-            <li className="text-xsm font-medium mt-2">
+            <li className="text-sm mt-2">
               <i>
                 <b>• Non-Recourse Finance with Confidence:</b>
               </i>{" "}

@@ -156,7 +156,7 @@ function Home() {
         {/* <div className="text-red-500 text-xsm">{nameError}</div> */}
       </div>
 
-      <div className="flex items-center gap-3">
+      <div className="note:flex items-center gap-3">
         <div className="my-3 w-full">
           <input
             type="text"
@@ -175,13 +175,14 @@ function Home() {
             defaultCountry="IN"
             value={phone}
             onChange={setPhone}
+            focusInputOnCountrySelection
             className="p-2 pt-1 pb-1 border-1 md:round border-[#F15928] outline-none text-sm w-full br-5"
           />
           {/* <div className="text-red-500 text-xsm">{phoneError}</div> */}
         </div>
       </div>
 
-      <div className="flex items-center gap-3">
+      <div className="note:flex items-center gap-3">
         <div className="my-3 w-full">
           <input
             type="text"
@@ -263,11 +264,11 @@ export default function MyModal({ isOpen, closeModal }) {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white note:p-6 p-3 text-left align-middle shadow-xl transition-all">
                   <div className="flex mb-5 pb-2 items-center border-b justify-between">
                     <Dialog.Title
                       as="h3"
-                      className="text-xl font-medium leading-6 text-gray-900"
+                      className="note:text-xl text-base font-medium leading-6 text-gray-900"
                     >
                       Request Demo
                     </Dialog.Title>

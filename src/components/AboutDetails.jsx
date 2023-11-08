@@ -2,23 +2,20 @@ import React from "react";
 import VideoSection from "./VideoSection";
 import Image from "next/image";
 import HowCredoreHelps from "../../public/assets/images/how-credore-helps.png";
+import CredoreSteps from "./CredoreSteps";
 
 const AboutDetails = () => {
   return (
-    <section className="section p-0" id="about-us">
+    <section className="section about-section p-0" id="about-us">
       <div className="container">
         <div className="detailSectn flex gap-4 items-center">
-          <div className="detailSecBx p-5 w-full pb-0">
+          <div className="detailSecBx p-5 w-full">
             {/* <div className="p-5 pl-0">
               <h1>How Credore Helps</h1>
             </div> */}
-            {/* <div className="heading">
-              Transforming Financial SupplyChain Management: Unlocking
-              Verifiable Trust with Credore
-            </div> */}
 
-            <div className="detailTxt">
-            <p className="font-normal text-base">
+            <div className="detailTxt p-5">
+              <p className="font-normal text-base">
                 Credore is a trailblazing force in the realm of trade finance,
                 dedicated to revolutionizing global commerce through
                 cutting-edge technology. With a strong commitment to
@@ -48,6 +45,7 @@ const AboutDetails = () => {
                 businesses:
               </p>
             </div>
+            <CredoreSteps />
           </div>
         </div>
       </div>

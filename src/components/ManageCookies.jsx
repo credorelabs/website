@@ -13,7 +13,7 @@ const ManageCookies = () => {
       location="bottom"
       buttonText="Accept!"
       cookieName="cookiesCredore"
-      style={{ background: "#889a9b", height: 100, padding: 20 }}
+      style={{ background: "#889a9b", padding: 10 }}
       // debug="true"
       buttonStyle={{
         color: "#FFFFFF",
@@ -28,7 +28,7 @@ const ManageCookies = () => {
       declineButtonStyle={{
         color: "#FFFFFF",
         fontSize: "13px",
-        fontSize: "16px",
+        // fontSize: "16px",
         fontWeight: 500,
         borderRadius: 5,
         padding: "10px",
@@ -38,16 +38,16 @@ const ManageCookies = () => {
       expires={150}
       onAccept={(acceptedByScrolling) => {
         getCookieConsentValue();
-        console.log("1. document.cookie: ", document.cookie);
+        // console.log("1. document.cookie: ", document.cookie);
       }}
       enableDeclineButton
       onDecline={() => {
         resetCookieConsentValue();
-        console.log("2. document.cookie: ", document.cookie);
+        // console.log("2. document.cookie: ", document.cookie);
       }}
       // visible="true"
     >
-      This website uses cookies to enhance the user experience.{" "}
+      <h5 className="text-xsm font-normal tab:text-base">This website uses cookies to enhance the user experience. </h5>
       <span
         style={{
           fontSize: "12px",

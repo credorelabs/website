@@ -14,7 +14,7 @@ const About = () => {
             <div className="p-5 pl-0">
               <h1>How Credore Helps</h1>
             </div>
-            
+
             {/* <div className="heading">
               Transforming Financial Supply Chain Management: Unlocking
               Verifiable Trust with Credore
@@ -44,10 +44,11 @@ const About = () => {
                 businesses:
               </p>
             </div>
-            <div className="container">
-              <CredoreSteps />
-            </div>
-            {/* <div>
+
+            <CredoreSteps />
+            
+            {/* 
+            <div>
               <Link href="/about_us">
                 <button type="button" className="btn-primary learn-more">
                   Read More

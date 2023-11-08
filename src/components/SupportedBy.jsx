@@ -12,7 +12,7 @@ const SupportedBy = () => {
   return (
     <section className="section">
       <div className="container">
-        <div className="flex flex-row gap-4 items-center">
+        <div className="med:flex gap-4 items-center">
           <div className="p-5 pl-0 mb-10 flex flex-col gap-1">
             <h1 className="text-base text-left p-3 py-2 bg-[#29564b85] text-white">Investors</h1>
             <div className="flex items-center border-1">

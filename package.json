@@ -9,8 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
     "@headlessui/react": "^1.6.1",
     "@trendyol-js/react-carousel": "^3.0.2",
+    "email-js": "^2.0.2",
     "formik": "^2.4.2",
     "framer-motion": "^6.3.3",
     "hero-slider": "^3.2.0",

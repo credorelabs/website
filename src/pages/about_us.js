@@ -34,7 +34,7 @@ const about_us = () => {
           <div className="homeBannerSection">
             <div className="banner-details">
               <h1 className="hero-heading font-medium text-[#f15928] text-[#f15928]">
-              How Credore Helps
+                How Credore Helps
               </h1>
             </div>
             {/* <div className="bannerImage">
@@ -48,16 +48,14 @@ const about_us = () => {
           </div> */}
           </div>
         </div>
+        
       </section>
-      
+
+            
       <LazyShow>
-        <AboutDetails />
+        <AboutDetails/>
       </LazyShow>
-      
-      <LazyShow>
-        <CredoreSteps />
-      </LazyShow>
-      
+
       <LazyShow>
         <Team />
       </LazyShow>
