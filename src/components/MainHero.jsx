@@ -14,13 +14,14 @@ const MainHero = () => {
               <span className="font-bold">Verified </span> Deduplication
               <br></br>
             </h1> */}
-            <h1 className="hero-heading font-medium">
+            <h1 className="hero-heading med:w-[100vh]">Strengthening Global Trade Partnerships Through Legally Recognized Electronic Trade Documentation</h1>
+            {/* <h1 className="hero-heading font-medium">
             Financial Supply Chain Mastery:<br></br>
               <span className="tag-line font-bold">Trade, Trust, Transcend</span>{" "}
               
-            </h1>
+            </h1> */}
             <div className="mt-5">
-              <button className="knowMore btn-primary border-1 border-gray-300">Know More</button>
+              <button className="knowMore btn-primary border-1 border-gray-300"><a href="#about-us" className=" !px-2 !py-3 text-white">Know More</a></button>
             </div>
           </div>
         </div>

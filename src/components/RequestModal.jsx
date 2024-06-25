@@ -5,8 +5,10 @@ import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 
 import ReCAPTCHA from "react-google-recaptcha";
+import Swal from "sweetalert2";
+import axios from "axios";
 
-function Home() {
+function Home({OnClose}) {
   const recaptchaRef = createRef();
   const [inputError, setInputError] = useState("");
   const [emailError, setEmailError] = useState(" ");
@@ -74,7 +76,8 @@ function Home() {
     setRemarks(value);
   };
 
-  const submitData = (value) => {
+  const url=process.env.NEXT_PUBLIC_URL
+  const submitData = async (value) => {
     const inputData = {
       name: name,
       email: email,
@@ -83,31 +86,46 @@ function Home() {
       designation: designation,
       query: remarks,
     };
-    fetch("https://dev.credore.xyz/users/contact/form", {
-      method: "POST",
-      body: JSON.stringify(inputData),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data?.message) {
-          // setSuccessStatus(data?.message);
-          alert("Something went wrong: " + data?.message);
-        } else {
-          // setSuccessStatus(
-          //   "Thank you for registration. We will notify you at the earliest."
-          // );
-          alert(
-            "Thank you for registration. We will notify you at the earliest."
-          );
-        }
-      })
-      .catch(() => {
-        alert("Something went wrong: " + data?.message);
-        closeModal;
-      });
+    try {
+      const response=await axios.post(`${url}/website/demo`,inputData)
+      if(response?.data?.statusCode===201){
+        Swal.fire({
+          icon:'success',
+          title:"Success!",
+          text:"We have received your details and our team will contact you shortly!"
+        })
+      } else{
+        Swal.fire({
+          icon:"warning",
+          text:"It seems there is an server error, please try again after sometime!"
+        })
+      }
+      OnClose()
+      // Send Email
+      // e.preventDefault(); // prevents the page from reloading when you hit “Send”
+
+      // emailjs
+      //   .sendForm(
+      //     "service_7cp4rhl",
+      //     "template_iq5u1yc",
+      //     form.current,
+      //     "h38-IC67AZT_NCMwl"
+      //   )
+      //   .then(
+      //     (result) => {
+      //       alert("Your message is sent successfully");
+      //       // show the user a success message
+      //     },
+      //     (error) => {
+      //       alert("Error in sending message, Please try again later!");
+      //       // show the user an error
+      //     }
+      //   );
+
+      // formik.resetForm();
+    } catch (error) {
+      console.log(error);
+    }
     // setSuccessStatus("Something Went Wrong"));
   };
 
@@ -281,7 +299,7 @@ export default function MyModal({ isOpen, closeModal }) {
                     </button>
                   </div>
                   <div className="mt-2">
-                    <Home />
+                    <Home OnClose={closeModal}/>
                   </div>
                 </Dialog.Panel>
               </Transition.Child>

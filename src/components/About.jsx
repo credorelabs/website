@@ -7,7 +7,7 @@ import CredoreSteps from "./CredoreSteps";
 
 const About = () => {
   return (
-    <section className="section about-section p-0" id="about-us">
+    <section className="section about-section p-0 mt-10" id="about-us">
       <div className="container">
         <div className="detailSectn flex gap-4 items-center">
           <div className="detailSecBx p-5 w-full">
