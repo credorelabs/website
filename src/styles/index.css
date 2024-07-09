@@ -7093,7 +7093,7 @@ html {
   flex-direction: column;
 }
 .banner-details .hero-heading {
-  font-size:42px;
+  font-size:35px;
   margin-bottom: 15px;
   line-height: revert;
   color: #24554a;
@@ -7930,7 +7930,7 @@ html {
 }
 
 .hero-section {
-  /* background-image: url(../../public/assets/images/hero-bg.png); */
+  /* background-image: url(../../public/assets/images/heroBg.png); */
   background-image: url(../../public/assets/images/hero-bg.png);
   min-height: 550px;
   /* max-height: 680px; */

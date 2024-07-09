@@ -63,7 +63,6 @@ const Contact = () => {
     }),
 
     onSubmit: async (values,{resetForm}) => {
-      console.log("values: ", values);
 
       let formData = {
         name: values.name,
@@ -77,7 +76,6 @@ const Contact = () => {
 
       try {
         const response=await axios.post(`${url}/website/contact`,formData)
-        console.log(response)
         if(response?.data?.statusCode===201){
           Swal.fire({
             icon:'success',
@@ -114,6 +112,10 @@ const Contact = () => {
 
         // formik.resetForm();
       } catch (error) {
+        Swal.fire({
+          icon:"warning",
+          text:"It seems there is an server error, please try again after sometime!"
+        })
         console.log(error);
       }
     },

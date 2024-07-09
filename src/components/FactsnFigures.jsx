@@ -17,18 +17,23 @@ const FactsnFigures = () => {
               <div className="w-full">
                 <label className="text-xsm text-[#f15928] leading-[0.5rem] font-bold">
                   {/* Deduplication of Invoices and Negotiable Documents */}
-                  Deduplication of Invoices and Transactions
+                  {/* Deduplication of Invoices and Transactions */}
+                  Legal Equivalence to Paper Records
                 </label>
               </div>
             </div>
             <div className="w-full p-2 pl-4 bg-[#FFF]">
               <ul>
                 <li>
-                  <p>Prevent Duplicate Payments</p>
+                  <p className="text-center">
+                    {/* Prevent Duplicate Payments */}
+                    <br/>
+                    UNCITRAL MLETR gives electronic records legal parity
+                    </p>
                 </li>
-                <li>
+                {/* <li>
                   <p>Ensure Reliable Verification</p>
-                </li>
+                </li> */}
               </ul>
             </div>
           </li>
@@ -40,7 +45,8 @@ const FactsnFigures = () => {
               </div>
               <div className="w-full">
                 <label className="text-xsm text-[#f15928] leading-[0.5rem] font-bold">
-                  Invoice Financing and Export Factoring <br></br>
+                  {/* Invoice Financing and Export Factoring <br></br> */}
+                  Enhanced Security and Authenticity
                 </label>
                 {/* <span className="text-xsm text-[#444] leading-[0.5rem] font-bold">
                   Invoices and Negotiable Documents
@@ -50,11 +56,15 @@ const FactsnFigures = () => {
             <div className="w-full p-2 pl-4 bg-[#FFF]">
               <ul>
                 <li>
-                  <p>Accelerate Cash Flow</p>
+                  <p className="text-center">
+                    {/* Accelerate Cash Flow */}
+                    <br/>
+                    Framework for secure electronic records, reducing fraud
+                    </p>
                 </li>
-                <li>
+                {/* <li>
                   <p>Empower Business Growth</p>
-                </li>
+                </li> */}
               </ul>
             </div>
           </li>
@@ -66,18 +76,22 @@ const FactsnFigures = () => {
               </div>
               <div className="w-full">
                 <label className="text-xsm text-[#f15928] leading-[0.5rem] font-bold">
-                  Enhanced Risk Mitigation
+                  {/* Enhanced Risk Mitigation */}
+                  Streamlined Trade Processes
                 </label>
               </div>
             </div>
             <div className="w-full p-2 pl-4 bg-[#FFF]">
               <ul>
                 <li>
-                  <p>Strengthen Security & Compliance</p>
+                  <p className="text-center">
+                  Speed up trade by reducing processing times and administrative burdens
+                    {/* Strengthen Security & Compliance */}
+                  </p>
                 </li>
-                <li>
+                {/* <li>
                   <p>Optimize Lending Decisions</p>
-                </li>
+                </li> */}
               </ul>
             </div>
           </li>
@@ -88,18 +102,22 @@ const FactsnFigures = () => {
               </div>
               <div className="w-full">
                 <label className="text-xsm text-[#f15928] leading-[0.5rem] font-bold">
-                  Real-Time Transaction Visibility
+                  {/* Real-Time Transaction Visibility */}
+                  Global Acceptance and Interoperability
                 </label>
               </div>
             </div>
             <div className="w-full p-2 pl-4 bg-[#FFF]">
               <ul>
                 <li>
-                  <p>Gain Transparent Insights</p>
+                  <p className="text-center">
+                  Promotes global harmonization of electronic trade, enhancing cross-border reliability
+                    {/* Gain Transparent Insights */}
+                    </p>
                 </li>
-                <li>
+                {/* <li>
                   <p>Enable Informed Decision-Making</p>
-                </li>
+                </li> */}
               </ul>
             </div>
           </li>

@@ -124,6 +124,10 @@ function Home({OnClose}) {
 
       // formik.resetForm();
     } catch (error) {
+      Swal.fire({
+        icon:"warning",
+        text:"It seems there is an server error, please try again after sometime!"
+      })
       console.log(error);
     }
     // setSuccessStatus("Something Went Wrong"));
