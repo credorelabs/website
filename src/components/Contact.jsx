@@ -14,6 +14,8 @@ import {
 import Form from "./RequestModal";
 import * as Yup from "yup";
 import emailjs from "@emailjs/browser";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 const Contact = () => {
   const [email, setEmail] = useState("");
@@ -35,6 +37,8 @@ const Contact = () => {
   function openModal() {
     setIsOpen(true);
   }
+
+  const url=process.env.NEXT_PUBLIC_URL
 
   const formik = useFormik({
     initialValues: {
@@ -58,43 +62,60 @@ const Contact = () => {
       query: Yup.string().required("Please enter your query"),
     }),
 
-    onSubmit: async (values) => {
-      console.log("values: ", values);
+    onSubmit: async (values,{resetForm}) => {
 
       let formData = {
         name: values.name,
         email: values.email,
         phone: values.phone,
-        org: values.org,
+        companyName: values.org,
         country: values.country,
-        query: values.query,
-        to_name: "Team",
+        query: values.query
+        // to_name: "Team",
       };
 
       try {
+        const response=await axios.post(`${url}/website/contact`,formData)
+        if(response?.data?.statusCode===201){
+          Swal.fire({
+            icon:'success',
+            title:"Success!",
+            text:"We have received your details and our team will contact you shortly!"
+          })
+          resetForm();
+        } else{
+          Swal.fire({
+            icon:"warning",
+            text:"It seems there is an server error, please try again after sometime!"
+          })
+        }
         // Send Email
         // e.preventDefault(); // prevents the page from reloading when you hit “Send”
 
-        emailjs
-          .sendForm(
-            "service_7cp4rhl",
-            "template_iq5u1yc",
-            form.current,
-            "h38-IC67AZT_NCMwl"
-          )
-          .then(
-            (result) => {
-              alert("Your message is sent successfully");
-              // show the user a success message
-            },
-            (error) => {
-              alert("Error in sending message, Please try again later!");
-              // show the user an error
-            }
-          );
+        // emailjs
+        //   .sendForm(
+        //     "service_7cp4rhl",
+        //     "template_iq5u1yc",
+        //     form.current,
+        //     "h38-IC67AZT_NCMwl"
+        //   )
+        //   .then(
+        //     (result) => {
+        //       alert("Your message is sent successfully");
+        //       // show the user a success message
+        //     },
+        //     (error) => {
+        //       alert("Error in sending message, Please try again later!");
+        //       // show the user an error
+        //     }
+        //   );
 
         // formik.resetForm();
       } catch (error) {
+        Swal.fire({
+          icon:"warning",
+          text:"It seems there is an server error, please try again after sometime!"
+        })
         console.log(error);
       }
     },

@@ -40,7 +40,7 @@ const WhyCredore = () => {
         href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"
         rel="stylesheet"
       />
-      <nav className="nav tab:flex items-center justify-between p-10 py-1 xsm:p-1">
+      <nav className="nav tab:flex items-center justify-between p-10 py-1 xsm:p-1 sticky top-0 bg-white z-50 shadow-xl">
         <div className="flex flex-no-shrink items-center mr-6 py-2 text-grey-darkest">
           <Link href="/">
             <a className="font-semibold tracking-tight w-60">
