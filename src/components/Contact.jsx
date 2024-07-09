@@ -39,6 +39,7 @@ const Contact = () => {
   }
 
   const url=process.env.NEXT_PUBLIC_URL
+  console.log(`${url}/website/contact`)
 
   const formik = useFormik({
     initialValues: {
