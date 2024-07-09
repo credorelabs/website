@@ -39,7 +39,6 @@ const Contact = () => {
   }
 
   const url=process.env.NEXT_PUBLIC_URL
-  console.log(`${url}/website/contact`)
 
   const formik = useFormik({
     initialValues: {
@@ -76,7 +75,7 @@ const Contact = () => {
       };
 
       try {
-        const response=await axios.post(`${url}/website/contact`,formData)
+        const response=await axios.post(`https://api.credore.xyz/x1/website/contact`,formData)
         if(response?.data?.statusCode===201){
           Swal.fire({
             icon:'success',
