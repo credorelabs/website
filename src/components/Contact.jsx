@@ -38,7 +38,7 @@ const Contact = () => {
     setIsOpen(true);
   }
 
-  const url=process.env.NEXT_PUBLIC_URL
+  // const url=process.env.NEXT_PUBLIC_URL
 
   const formik = useFormik({
     initialValues: {

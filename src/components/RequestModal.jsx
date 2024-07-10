@@ -76,7 +76,7 @@ function Home({OnClose}) {
     setRemarks(value);
   };
 
-  const url=process.env.NEXT_PUBLIC_URL
+  // const url=process.env.NEXT_PUBLIC_URL
   const submitData = async (value) => {
     const inputData = {
       name: name,
@@ -87,7 +87,7 @@ function Home({OnClose}) {
       query: remarks,
     };
     try {
-      const response=await axios.post(`${url}/website/demo`,inputData)
+      const response=await axios.post(`https://api.credore.xyz/x1/website/demo`,inputData)
       if(response?.data?.statusCode===201){
         Swal.fire({
           icon:'success',
