@@ -15,7 +15,8 @@ const MainHero = () => {
               <br></br>
             </h1> */}
             <h1 className="hero-heading med:w-[100vh]">Strengthening Global Trade Partnerships Through Legally Recognized Electronic Trade Documentation</h1>
-            <span className="tag-line font-medium med:w-[60vh] mt-5 text-sm">Shipping forms the backbone of global trade, facilitating 90% of goods transported by sea. Authenticating and verifying documents is crucial due to their scale and complexity, with traditional paper processes causing delays.</span>
+            <span className="tag-line font-medium med:w-[70vh] mt-5 text-sm">Shipping supports 90% of sea-transported goods, necessitating critical document authentication and verification.</span>
+            <span className="tag-line font-medium med:w-[60vh] mt-5 text-sm"><b>Credore</b>'s electronic trade document platform stands as the solution, ensuring safety, speed, sustainability, and cost-efficiency in global trade.</span>
             {/* <h1 className="hero-heading font-medium">
             Financial Supply Chain Mastery:<br></br>
               <span className="tag-line font-bold">Trade, Trust, Transcend</span>{" "}
