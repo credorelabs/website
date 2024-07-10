@@ -45,6 +45,7 @@ const App = () => {
     // <div className="bg-background" style={{ width: windowSize.width }}>
     <div className="bg-background">
       <Head>
+        <link rel="icon" href='/favicon.ico' />
         <title>
           Welcome to Credore - Revolutionary Fintech Transforming Financial
           Supply Chain Management with Blockchain Technology
