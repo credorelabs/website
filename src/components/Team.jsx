@@ -4,7 +4,6 @@ import Image from "next/image";
 import TheTeam from "../../public/assets/images/team/the-team.png";
 import Avtar from "../../public/assets/images/team/avtar.jpg";
 import Harshit from "../../public/assets/images/team/harshit.jpg";
-import Dinesh from "../../public/assets/images/team/dinesh.jpeg";
 import Lingraj from "../../public/assets/images/team/lingraj.jpg";
 import Abhilash from "../../public/assets/images/team/Abhilash.jpeg";
 import Praduman from "../../public/assets/images/team/Praduman.jpeg";
@@ -34,50 +33,30 @@ const Team = () => {
             Our Team
           </h2>
         </div>
-        <div className="grid mb-6 lg:mb-16 gap-5 med:grid-cols-2">
-          <div className="items-center bg-gray-50 rounded-md shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
-            <a href="#" className="px-3">
-              <Image
-                className="w-full rounded-md sm:rounded-none sm:rounded-l-lg px-3"
-                src={Lingraj}
-                width={240}
-                height={260}
-                alt="Lingraj Mahanand"
-              />
-            </a>
-            <div className="p-5 mb-0">
-              <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                <a href="#">Lingraj Mahanand</a>
-              </h3>
-              <span className="text-gray-500 dark:text-gray-400 text-xsm font-medium">
-                Founder
-              </span>
-              <p className="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400 text-xs">
-                15 years of IT experience in SoftwareDevelopment at Barclays,
-                BNY Mellon,HSBC and web3 startups Streams, ZEFI and Herdius.
-              </p>
-            </div>
-          </div>
-          <div className="items-center bg-gray-50 rounded-md shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
-            <a href="#" className="px-3">
-              <Image
-                className="!w-1/2 rounded-md sm:rounded-none sm:rounded-l-lg"
-                src={Dinesh}
-                width={240}
-                height={260}
-                alt="Harshit Jain"
-              />
-            </a>
-            <div className="p-5">
-              <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                <a href="#">Dinesh Modi</a>
-              </h3>
-              <span className="text-gray-500 dark:text-gray-400 text-xsm font-medium">
-              Chief Business Officer, MBA in Marketing from ITM B-School, Navi Mumbai
-              </span>
-              <p className="mt-3 font-light text-gray-500 dark:text-gray-400 text-xs">
-              Dinesh has over 12 years of experience in roles related to Sales, Business Development, Strategy & Business Excellence with companies such as Blue Dart, Blackbuck & Paytm.
-              </p>
+        <div className="flex justify-center items-center mb-6 lg:mb-16 mx-auto align-middle">
+          <div className="flex med:w-[60%] gap-5 items-center">
+            <div className="items-center bg-gray-50 rounded-md shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
+              <a href="#" className="px-3">
+                <Image
+                  className="w-full rounded-md sm:rounded-none sm:rounded-l-lg"
+                  src={Lingraj}
+                  width={240}
+                  height={260}
+                  alt="Lingraj Mahanand"
+                />
+              </a>
+              <div className="p-1 mb-0">
+                <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+                  <a href="#">Lingraj Mahanand</a>
+                </h3>
+                <span className="text-gray-500 dark:text-gray-400 text-xsm font-medium">
+                  Founder
+                </span>
+                <p className="mt-1 px-5 mb-4 font-light text-gray-500 dark:text-gray-400 text-xs">
+                  15 years of IT experience in Software Development at Barclays, BNY
+                  Mellon, HSBC, and web3 startups Streams, ZEFI, and Herdius.
+                </p>
+              </div>
             </div>
           </div>
         </div>
