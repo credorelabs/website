@@ -10,6 +10,7 @@ import Praduman from "../../public/assets/images/team/Praduman.jpeg";
 import Raj from "../../public/assets/images/team/Raj.jpeg";
 import Sunil from "../../public/assets/images/team/sunil.jpeg";
 import Shastri from "../../public/assets/images/team/Shastri.jpeg";
+import Ayush from "../../public/assets/images/team/Ayush.JPG";
 // import Step1 from "../../public/assets/images/about/step1.png";
 
 const Team = () => {
@@ -116,6 +117,25 @@ const Team = () => {
               </h3>
               <span className="text-gray-500 dark:text-gray-400 text-xsm font-medium">
                 Software Development Engineer
+              </span>
+            </div>
+          </div>
+          <div className="items-center bg-gray-50 rounded-md shadow sm:flex dark:bg-gray-800 dark:border-gray-700 px-3 w-full">
+            <a href="#" className="p-3">
+              <Image
+                className="w-full rounded-md sm:rounded-none sm:rounded-l-lg"
+                src={Ayush}
+                alt="Ayushman Kumar Sahoo"
+                height={200}
+                width={150}
+              />
+            </a>
+            <div className="p-5">
+              <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+                <a href="#">Ayushman Kumar Sahoo</a>
+              </h3>
+              <span className="text-gray-500 dark:text-gray-400 text-xsm font-medium">
+                Business Development Executive
               </span>
             </div>
           </div>
