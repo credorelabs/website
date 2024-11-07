@@ -107,11 +107,18 @@ const Footer = () => {
             <div className="mediaLinks items-center">
               <ul className="otherLinks">
                 <li>
-                  <a href="privacy_policy">Privacy Policy</a>
+                  <a href="/assets/files/Credore-Privacy-Policy.pdf" target="_blank">Privacy Policy</a>
                 </li>
                 <li>
-                  <a href="cookies_policy">Cookies Policy</a>
+                  <a href="/assets/files/Credore-Terms-Of-Use.pdf" target="_blank">Terms Of Use</a>
                 </li>
+                <li>
+                  <a href="/assets/files/Credore-Refund-Policy.pdf" target="_blank">Refund Policy</a>
+                </li>
+                {/* <li>
+                  <a href="cookies_policy">Cookies Policy</a>
+                </li> */}
+                {/* <a href="privacy_policy">Privacy Policy</a> */}
               </ul>
             </div>
           </div>
