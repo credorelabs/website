@@ -7,14 +7,14 @@ const Community = () => {
       <div className="flex flex-col items-center text-white rounded-xl p-2">
         <h3 className="text-xl font-semibold py-2">Join Our Community</h3>
         <div className="flex gap-5 justify-center">
-          <a
+          {/* <a
             className="py-1 px-2 rounded-md text-xl"
             href="https://twitter.com/CredoreXYZ"
             target="_blank"
             rel="noreferrer"
           >
             <FaTwitter />
-          </a>
+          </a> */}
           <a
             className="py-1 px-2 rounded-md text-xl"
             href="https://in.linkedin.com/company/credore"

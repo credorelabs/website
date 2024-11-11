@@ -26,20 +26,20 @@ const Footer = () => {
                   <a href="/#contact">Contact Us</a>
                 </li>
                 <li>
-                  <a href="#">Blog</a>
+                  <a href="/about_us">How Credore Helps</a>
                 </li>
                 <li>
-                  <a href="#">Careers</a>
+                  <a href="/offerings_overview">Overview </a>
                 </li>
                 <li>
-                  <a href="#">Support</a>
+                  <a href="/technology">Our Technology</a>
                 </li>
                 <li>
-                  <a href="#">Vulnerability Disclosure</a>
+                  <a href="/use_cases">Use Cases</a>
                 </li>
-                <li>
+                {/* <li>
                   <a href="#">Accessibliity</a>
-                </li>
+                </li> */}
               </ul>
             </div>
             <div className="solutionsLinks">
