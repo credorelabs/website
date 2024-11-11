@@ -23,7 +23,7 @@ const Footer = () => {
               <h1 className="heading">Quick Links</h1>
               <ul className="linksBx">
                 <li>
-                  <a href="#">Contact Us</a>
+                  <a href="/#contact">Contact Us</a>
                 </li>
                 <li>
                   <a href="#">Blog</a>
