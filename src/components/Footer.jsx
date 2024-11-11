@@ -23,19 +23,19 @@ const Footer = () => {
               <h1 className="heading">Quick Links</h1>
               <ul className="linksBx">
                 <li>
-                  <a href="/#contact">Contact Us</a>
+                  <Link href="/#contact">Contact Us</Link>
                 </li>
                 <li>
-                  <a href="/about_us">How Credore Helps</a>
+                  <Link href="/about_us">How Credore Helps</Link>
                 </li>
                 <li>
-                  <a href="/offerings_overview">Overview </a>
+                  <Link href="/offerings_overview">Overview </Link>
                 </li>
                 <li>
-                  <a href="/technology">Our Technology</a>
+                  <Link href="/technology">Our Technology</Link>
                 </li>
                 <li>
-                  <a href="/use_cases">Use Cases</a>
+                  <Link href="/use_cases">Use Cases</Link>
                 </li>
                 {/* <li>
                   <a href="#">Accessibliity</a>
