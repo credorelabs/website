@@ -47,7 +47,7 @@ const WhyCredore = () => {
         className="block w-full"
       >
         <div className="relative w-full p-2 animate-pulse border-b border-orange-300 bg-gradient-to-r from-[#fff7f4] via-[#ffece4] to-[#fff7f4] text-center flex flex-col sml:flex-row items-center justify-center gap-1 sml:gap-2 font-semibold text-[10px] sml:text-xs med:text-sm text-[#f15928] drop-shadow-lg [text-shadow:1px_1px_2px_rgba(0,0,0,0.15)] transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:from-[#fff2ec] hover:to-[#fff2ec]">
-          <img
+           <img
             src="/assets/images/honor.png"
             alt="honor"
             className="h-4 w-4 sml:h-5 sml:w-5 mt-0 my-auto"
