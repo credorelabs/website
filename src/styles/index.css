@@ -19,11 +19,20 @@ strong {
   font-weight: 700;
 }
 body {
-  min-height: 100vh;
-  overflow-x: hidden;
+  /* min-height: 100vh; */
+  /* overflow-x: hidden;
+  overflow-y: auto; */
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
 }
+
+html,
+body {
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
 ol[class],
 ul[class] {
   list-style: none;
@@ -5483,7 +5492,7 @@ html {
   padding-right: 1.8rem;
   position: relative;
 }
-.c-roi-calculated .accordion-header .text-heading.md:after {
+.c-roi-calculated .accordion-header .text-heading.med:after {
   background: transparent;
   border: 3px solid #29564b;
   border-width: 0 2px 2px 0;
@@ -5498,7 +5507,7 @@ html {
   transform: rotate(220deg) skew(-10deg);
   width: 0.8rem;
 }
-.c-roi-calculated .accordion-header.closed .text-heading.md:after {
+.c-roi-calculated .accordion-header.closed .text-heading.med:after {
   top: 5px;
   transform: rotate(40deg) skew(-10deg);
 }

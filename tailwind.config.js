@@ -45,31 +45,32 @@ module.exports = {
           },
         },
       },
-    },screens: {
-      'xsm': '240px',
-      // => @media (min-width: 240px) { ... }
-
-      'sml': '320px',
-      // => @media (min-width: 320px) { ... }
-
-      'med': '480px',
-      // => @media (min-width: 480px) { ... }
-
-      'note': '640px',
-      // => @media (min-width: 540px) { ... }
-
-      'tab': '767px',
-      // => @media (min-width: 640px) { ... }
-
-      'lap': '840px',
-      // => @media (min-width: 840px) { ... }
-
-      'dsk': '1024px',
-      // => @media (min-width: 1024px) { ... }
-
-      'lrg': '1280px',
-      // => @media (min-width: 1280px) { ... }
     },
+    // screens: {
+    //   'xsm': '240px',
+    //   // => @media (min-width: 240px) { ... }
+
+    //   'sml': '320px',
+    //   // => @media (min-width: 320px) { ... }
+
+    //   'med': '480px',
+    //   // => @media (min-width: 480px) { ... }
+
+    //   'note': '640px',
+    //   // => @media (min-width: 540px) { ... }
+
+    //   'tab': '767px',
+    //   // => @media (min-width: 640px) { ... }
+
+    //   'lap': '840px',
+    //   // => @media (min-width: 840px) { ... }
+
+    //   'dsk': '1024px',
+    //   // => @media (min-width: 1024px) { ... }
+
+    //   'lrg': '1280px',
+    //   // => @media (min-width: 1280px) { ... }
+    // },
   },
   variants: {},
   plugins: [],

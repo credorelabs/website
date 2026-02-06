@@ -83,7 +83,7 @@ const Footer = () => {
                 <div className="receiveUpdates flex flex-col dsk:flex-row gap-4 py-0">
                   <input
                     type="text"
-                    className="p-2 py-1 border-[0.5px] md:round border-[#F15928] outline-none text-sm br-5"
+                    className="p-2 py-1 border-[0.5px] med:round border-[#F15928] outline-none text-sm br-5"
                     placeholder="Enter Your Email"
                     value=""
                     onChange={() => {}}

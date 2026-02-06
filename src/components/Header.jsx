@@ -83,7 +83,7 @@ const WhyCredore = () => {
         <div className="flex">
           <input className="menu-btn hidden" type="checkbox" id="menu-btn" />
           <label
-            className="menu-icon absolute top-4 right-0 block cursor-pointer md:hidden px-2 py-4 tab:relative select-none"
+            className="menu-icon absolute top-4 right-0 block cursor-pointer med:hidden px-2 py-4 tab:relative select-none"
             htmlFor="menu-btn"
           >
             <span className="navicon bg-grey-darkest flex items-center relative"></span>
@@ -93,10 +93,10 @@ const WhyCredore = () => {
           return <MenuItems items={menu} key={index} />;
         })} */}
 
-          <ul className="menu flex justify-end list-reset m-0 w-full md:w-auto items-center text-sm">
+          <ul className="menu flex justify-end list-reset m-0 w-full med:w-auto items-center text-sm">
             <li className="">
               <Link href="/about_us">
-                <a className="block md:inline-block px-4 py-2 no-underline text-grey-darkest hover:bg-[#0B9173] br-5 hover:text-white hover:underline-offset-0 cursor-pointer b-1">
+                <a className="block med:inline-block px-4 py-2 no-underline text-grey-darkest hover:bg-[#0B9173] br-5 hover:text-white hover:underline-offset-0 cursor-pointer b-1">
                   How Credore Helps?
                 </a>
               </Link>
@@ -104,7 +104,7 @@ const WhyCredore = () => {
 
             <li className="" onMouseLeave={handleOfferingsClick}>
               <a
-                className="block md:inline-block px-4 py-2 no-underline text-grey-darkest hover:bg-[#0B9173] br-5 hover:text-white hover:underline-offset-0 cursor-pointer b-1"
+                className="block med:inline-block px-4 py-2 no-underline text-grey-darkest hover:bg-[#0B9173] br-5 hover:text-white hover:underline-offset-0 cursor-pointer b-1"
                 onClick={handleOfferingsClick}
                 onMouseEnter={handleOfferingsClick}
                 aria-haspopup="menu"
@@ -116,14 +116,14 @@ const WhyCredore = () => {
               <ul className="dropdown " style={{ display: display }}>
                 <li className="menu-items">
                   <Link href="/offerings_overview">
-                    <a className="block md:inline-block px-4 py-2 no-underline text-grey-darkest hover:bg-[#0B9173] br-5 hover:text-white hover:underline-offset-0 cursor-pointer b-1">
+                    <a className="block med:inline-block px-4 py-2 no-underline text-grey-darkest hover:bg-[#0B9173] br-5 hover:text-white hover:underline-offset-0 cursor-pointer b-1">
                       Overview
                     </a>
                   </Link>
                 </li>
                 <li className="menu-items">
                   <Link href="/technology">
-                    <a className="block md:inline-block px-4 py-2 no-underline text-grey-darkest hover:bg-[#0B9173] br-5 hover:text-white hover:underline-offset-0 cursor-pointer b-1">
+                    <a className="block med:inline-block px-4 py-2 no-underline text-grey-darkest hover:bg-[#0B9173] br-5 hover:text-white hover:underline-offset-0 cursor-pointer b-1">
                       Technology
                     </a>
                   </Link>
@@ -133,7 +133,7 @@ const WhyCredore = () => {
 
             {/* <li className="">
             <Link href="https://docs.credore.xyz/">
-              <a className="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:bg-[#0B9173]">
+              <a className="block med:inline-block px-4 py-3 no-underline text-grey-darkest hover:bg-[#0B9173]">
                 Resources
               </a>
             </Link>
@@ -142,7 +142,7 @@ const WhyCredore = () => {
             <li className="">
               {/* <Link href="/use_cases"> */}
               <Link href="/use_cases">
-                <a className="block md:inline-block px-4 py-2 no-underline text-grey-darkest hover:bg-[#0B9173] br-5 hover:text-white hover:underline-offset-0 cursor-pointer b-1 br-5">
+                <a className="block med:inline-block px-4 py-2 no-underline text-grey-darkest hover:bg-[#0B9173] br-5 hover:text-white hover:underline-offset-0 cursor-pointer b-1 br-5">
                   Use Cases
                 </a>
               </Link>

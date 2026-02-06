@@ -170,7 +170,7 @@ function Home({OnClose}) {
       <div className="my-3">
         <input
           type="text"
-          className="p-2 pt-1 pb-1 border-1 md:round border-[#F15928] outline-none text-sm w-full br-5"
+          className="p-2 pt-1 pb-1 border-1 med:round border-[#F15928] outline-none text-sm w-full br-5"
           onChange={onChangeName}
           value={name}
           placeholder="Your Full Name *"
@@ -182,7 +182,7 @@ function Home({OnClose}) {
         <div className="my-3 w-full">
           <input
             type="text"
-            className="p-2 pt-1 pb-1 border-1 md:round border-[#F15928] outline-none text-sm w-full br-5"
+            className="p-2 pt-1 pb-1 border-1 med:round border-[#F15928] outline-none text-sm w-full br-5"
             onChange={onChangeEmail}
             value={email}
             placeholder="Your Email *"
@@ -198,7 +198,7 @@ function Home({OnClose}) {
             value={phone}
             onChange={setPhone}
             focusInputOnCountrySelection
-            className="p-2 pt-1 pb-1 border-1 md:round border-[#F15928] outline-none text-sm w-full br-5"
+            className="p-2 pt-1 pb-1 border-1 med:round border-[#F15928] outline-none text-sm w-full br-5"
           />
           {/* <div className="text-red-500 text-xsm">{phoneError}</div> */}
         </div>
@@ -208,7 +208,7 @@ function Home({OnClose}) {
         <div className="my-3 w-full">
           <input
             type="text"
-            className="p-2 pt-1 pb-1 border-1 md:round border-[#F15928] outline-none text-sm w-full br-5"
+            className="p-2 pt-1 pb-1 border-1 med:round border-[#F15928] outline-none text-sm w-full br-5"
             onChange={onChangeOrg}
             value={orgName}
             placeholder="Your Organization Name *"
@@ -218,7 +218,7 @@ function Home({OnClose}) {
         <div className="my-3 w-full">
           <input
             type="text"
-            className="p-2 pt-1 pb-1 border-1 md:round border-[#F15928] outline-none text-sm w-full br-5"
+            className="p-2 pt-1 pb-1 border-1 med:round border-[#F15928] outline-none text-sm w-full br-5"
             onChange={onChangeDesignation}
             value={designation}
             placeholder="Your Designation *"
@@ -229,7 +229,7 @@ function Home({OnClose}) {
 
       <div className="my-3">
         <textarea
-          className="p-2 pt-1 pb-1 border-1 md:round border-[#F15928] outline-none text-sm w-full br-5"
+          className="p-2 pt-1 pb-1 border-1 med:round border-[#F15928] outline-none text-sm w-full br-5"
           onChange={onChangeRemarks}
           value={remarks}
           placeholder="Your Query (optional)"

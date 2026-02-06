@@ -3,8 +3,9 @@
 @tailwind utilities;
 
 @layer components {
-  .tooltip {
-    @apply after:content-["Search"] after:hidden hover:after:absolute hover:after:top-24 hover:after:flex hover:after:bg-slate-800 hover:after:text-white hover:after:px-6 hover:after:py-2 hover:after:rounded-full hover:transition hover:duration-300 hover:ease-in-out;
+  .input {
+    @apply w-full border border-gray-300 rounded-lg px-4 py-1 text-sm
+    focus:outline-none focus:border-teal-500;
   }
 }
 
@@ -108,6 +109,6 @@ html {
 * {
   box-sizing: border-box;
 }
-body {
+/* body {
   height: 100%;
-}
+} */
