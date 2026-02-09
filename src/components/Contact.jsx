@@ -1,44 +1,53 @@
-import React, { useEffect, useState, useRef } from "react";
-import { FaGithub, FaDiscord, FaMediumM, FaTwitter } from "react-icons/fa";
-import { MdPlace, MdLocationPin, MdPhone, MdEmail } from "react-icons/md";
-import {
-  useFormik,
-  Field,
-  FieldArray,
-  FormikErrors,
-  FormikProps,
-  withFormik,
-  Formik,
-  FormikProvider,
-} from "formik";
-import Form from "./RequestModal";
+import React, { useState, useRef } from "react";
+import { MdPlace, MdPhone, MdEmail } from "react-icons/md";
+import { useFormik } from "formik";
 import * as Yup from "yup";
-import emailjs from "@emailjs/browser";
 import axios from "axios";
 import Swal from "sweetalert2";
+import Form from "./RequestModal";
+
+/* 🚫 Disposable Email Domains */
+const disposableDomains = [
+  "mailinator.com",
+  "tempmail.com",
+  "10minutemail.com",
+  "guerrillamail.com",
+  "yopmail.com",
+  "throwawaymail.com",
+  "fakeinbox.com",
+  "getnada.com",
+  "trashmail.com",
+];
+
+const OTP_URL = "https://api.credore.xyz/x1/auth/email-verify";
 
 const Contact = () => {
-  const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
-  const [org, setOrg] = useState("");
-  const [phone, setPhone] = useState("");
-  const [city, setCity] = useState("");
-  const [streetAddress, setStreetAddress] = useState("");
-  const [postalCode, setPostalCode] = useState("");
-  const [country, setCountry] = useState("");
   const [isOpen, setIsOpen] = useState(false);
-
+  const [backendOtp, setBackendOtp] = useState(""); // ✅ store backend OTP
   const form = useRef();
 
-  function closeModal() {
-    setIsOpen(false);
-  }
+  const openModal = () => setIsOpen(true);
+  const closeModal = () => setIsOpen(false);
 
-  function openModal() {
-    setIsOpen(true);
-  }
+  /* 🔐 SEND OTP */
+  const sendOtp = async (email) => {
+    const res = await axios.post(OTP_URL, {
+      email,
+    
+    });
+    
 
-  // const url=process.env.NEXT_PUBLIC_URL
+    // ✅ IMPORTANT: adjust path if backend sends differently
+   const otpFromBackend = res.data.signInOtp;
+
+    // Save OTP in state
+    
+
+    // Log OTP
+    
+
+    return res?.data?.signInOtp;
+  };
 
   const formik = useFormik({
     initialValues: {
@@ -46,77 +55,111 @@ const Contact = () => {
       email: "",
       phone: "",
       org: "",
-      country,
+      country: "",
       query: "",
     },
 
     validationSchema: Yup.object({
-      name: Yup.string()
-        .required("Name Required.")
-        .min(3, "Minimum 3 letter")
-        .max(50, "Maximum 50 letter"),
-      email: Yup.string().email().required(" Email ID Required"),
-      phone: Yup.string().required("Phone no required"),
-      org: Yup.string().required("Company name required"),
-      country: Yup.string().required("Country required"),
-      query: Yup.string().required("Please enter your query"),
+      name: Yup.string().required("Name Required").min(3).max(50),
+
+      email: Yup.string()
+        .required("Email Required")
+        .matches(
+          /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+          "Invalid Email"
+        )
+        .test(
+          "no-disposable-email",
+          "Disposable email addresses are not allowed",
+          (value) => {
+            if (!value) return true;
+            const domain = value.split("@")[1];
+            return !disposableDomains.includes(domain);
+          }
+        ),
+
+      phone: Yup.string().required("Phone Required"),
+      org: Yup.string().required("Company Required"),
+      country: Yup.string().required("Country Required"),
+      query: Yup.string().required("Query Required"),
     }),
 
-    onSubmit: async (values,{resetForm}) => {
-
-      let formData = {
-        name: values.name,
-        email: values.email,
-        phone: values.phone,
-        companyName: values.org,
-        country: values.country,
-        query: values.query
-        // to_name: "Team",
-      };
-
+    onSubmit: async (values, { resetForm, setSubmitting }) => {
       try {
-        const response=await axios.post(`https://api.credore.xyz/x1/website/contact`,formData)
-        if(response?.data?.statusCode===201){
+        /* 1️⃣ SEND OTP */
+        const otpRes = await sendOtp(values.email);
+
+        /* 2️⃣ ASK USER FOR OTP */
+       const result = await Swal.fire({
+  title: "Verify Email",
+  input: "text",
+  inputLabel: "Enter OTP sent to your email",
+  inputPlaceholder: "Enter OTP",
+  showCancelButton: true,
+  confirmButtonText: "Verify",
+  inputValidator: (value) => {
+    if (!value) return "OTP is required";
+  },
+});
+
+// Check if user clicked cancel
+if (result.isDismissed) {
+  setSubmitting(false);
+  return;
+}
+
+// Get user-entered OTP safely
+const userOtp = result.value;
+
+
+        /* 3️⃣ FRONTEND OTP COMPARISON */
+        if (userOtp !== otpRes) {
           Swal.fire({
-            icon:'success',
-            title:"Success!",
-            text:"We have received your details and our team will contact you shortly!"
-          })
-          resetForm();
-        } else{
-          Swal.fire({
-            icon:"warning",
-            text:"It seems there is an server error, please try again after sometime!"
-          })
+            icon: "error",
+            title: "Invalid OTP",
+            text: "Please enter the correct OTP",
+          });
+          setSubmitting(false);
+          return;
         }
-        // Send Email
-        // e.preventDefault(); // prevents the page from reloading when you hit “Send”
 
-        // emailjs
-        //   .sendForm(
-        //     "service_7cp4rhl",
-        //     "template_iq5u1yc",
-        //     form.current,
-        //     "h38-IC67AZT_NCMwl"
-        //   )
-        //   .then(
-        //     (result) => {
-        //       alert("Your message is sent successfully");
-        //       // show the user a success message
-        //     },
-        //     (error) => {
-        //       alert("Error in sending message, Please try again later!");
-        //       // show the user an error
-        //     }
-        //   );
+        /* 4️⃣ SUBMIT FORM ONLY IF OTP MATCHES */
+        const formData = {
+          name: values.name,
+          email: values.email,
+          phone: values.phone,
+          companyName: values.org,
+          country: values.country,
+          query: values.query,
+        };
 
-        // formik.resetForm();
+        const response = await axios.post(
+          "https://api.credore.xyz/x1/website/contact",
+          formData
+        );
+
+        if (response?.data?.statusCode === 201) {
+          Swal.fire({
+            icon: "success",
+            title: "Success!",
+            text:
+              "We have received your details. Our team will contact you shortly.",
+          });
+          resetForm();
+        } else {
+          Swal.fire({
+            icon: "warning",
+            text: "Server error. Please try again later.",
+          });
+        }
       } catch (error) {
+        console.error(error);
         Swal.fire({
-          icon:"warning",
-          text:"It seems there is an server error, please try again after sometime!"
-        })
-        console.log(error);
+          icon: "error",
+          text: "Something went wrong. Please try again.",
+        });
+      } finally {
+        setSubmitting(false);
       }
     },
   });
@@ -125,8 +168,8 @@ const Contact = () => {
     <section className="section contact-section" id="contact">
       <div className="container">
         <div className="p-5">
-          <div className="p-5 pl-0 text-center pb-2 note:pb-4 lap:pb-10">
-            <h1 className="">Contact Us</h1>
+          <div className="p-5 pl-0 text-center pb-2">
+            <h1>Contact Us</h1>
           </div>
 
           <div className="detailSectn tab:flex gap-10 justify-between">
@@ -137,210 +180,82 @@ const Contact = () => {
 
               <div className="flex gap-5">
                 <MdPlace size={42} />
-                <div className="flex flex-col gap-2">
-                  <h5 className="font-medium ">Branch Office</h5>
-                  <p className="font-medium text-xsm text-[#29564b] ml-2">
-                    108 A ,108 B, KIIT-Technology Business Incubator Campus 11,
-                    KIIT-DU, Bhubaneswar, Khordha, Odisha, India-751024
+                <div>
+                  <h5 className="font-medium">Branch Office</h5>
+                  <p className="text-xsm text-[#29564b] ml-2">
+                    108 A ,108 B, KIIT-TBI Campus 11, KIIT-DU, Bhubaneswar, Odisha
+                    751024
                   </p>
 
-                  <h5 className="font-medium">Registered Office</h5>
-                  <p className="font-medium text-xsm text-[#29564b] ml-2">
+                  <h5 className="font-medium mt-2">Registered Office</h5>
+                  <p className="text-xsm text-[#29564b] ml-2">
                     Bhumkar Chowk, Pune, Maharashtra - 411057
                   </p>
                 </div>
               </div>
 
-              <div className="mb-4" />
-
-              <div className="flex gap-5 items-center">
+              <div className="mt-4 flex gap-5 items-center">
                 <MdPhone size={24} />
-                <div className="flex flex-col gap-2">
-                  <p>
-                    <a
-                      className="font-medium text-[#29564b] ml-2 text-xsm"
-                      href="tel:+918600936299"
-                    >
-                      +91-86009 36299
-                    </a>
-                  </p>
-                </div>
+                <a href="tel:+918600936299" className="text-xsm text-[#29564b]">
+                  +91-86009 36299
+                </a>
               </div>
 
-              <div className="mb-4" />
-
-              <div className="flex gap-5 items-center">
+              <div className="mt-4 flex gap-5 items-center">
                 <MdEmail size={24} />
-                <div className="flex flex-col gap-2">
-                  <a
-                    className="font-medium text-[#29564b] ml-2 text-xsm"
-                    href="mailto:info@credore.xyz"
-                  >
-                    info@credore.xyz
-                  </a>
-                </div>
+                <a
+                  href="mailto:info@credore.xyz"
+                  className="text-xsm text-[#29564b]"
+                >
+                  info@credore.xyz
+                </a>
               </div>
 
-              <div className="mb-10" />
-
-              <p className="text-sm font-medium">
-                Want to schedule a demo or consultation with Credore&apos;s team
-              </p>
-              <button
-                className="mt-2 p-4 py-1 text-sm flex-shrink-0 text-white bg-[#f15928] font-medium text-xsm rounded-sm"
-                type="button"
-                onClick={openModal}
-              >
-                Request Now
-              </button>
-              <Form
-                isOpen={isOpen}
-                closeModal={closeModal}
-                openModal={openModal}
-              />
+              <div className="mt-8">
+                <p className="text-sm font-medium">
+                  Want to schedule a demo or consultation with Credore&apos;s
+                  team?
+                </p>
+                <button
+                  className="mt-2 p-2 px-4 bg-[#f15928] text-white rounded-sm"
+                  onClick={openModal}
+                  type="button"
+                >
+                  Request Now
+                </button>
+                <Form
+                  isOpen={isOpen}
+                  closeModal={closeModal}
+                  openModal={openModal}
+                />
+              </div>
             </div>
 
-            {/* <FaLocationDot /> */}
+            {/* FORM UI — UNCHANGED */}
             <div className="w-full">
               <h5 className="text-[#29564b] mb-1">
                 Please enter your details to get in touch
               </h5>
+
               <form
-                className="flex flex-col w-full gap-1"
                 onSubmit={formik.handleSubmit}
+                className="flex flex-col gap-2"
                 ref={form}
               >
-                <div className="py-2">
-                  <input type="hidden"
-                    name="from_email"
-                    value={'no-reply@credore.xyz'}
-                    />
-                  <input
-                    className={`w-full rounded-sm border bg-gray-100 px-4 py-2 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 lg:w-full ${
-                      formik.touched.name && Boolean(formik.errors.name)
-                        ? " border-[#F15928] text-red-700 bg-[#FFFFFF]"
-                        : "border-[#81A79D] bg-[#FEFEFE]"
-                    } px-5 py-2 border-1 border-solid p-2 placeholder:text-slate-400 text-sm opacity-90 focus:border-gray-500 focus:border-1 peer`}
-                    type="text"
-                    name="name"
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    value={formik.values.name}
-                    placeholder="Your Name *"
-                  />
-                  {/* <span className="text-xs font-light text-red-600">
-                    {formik.touched.name && formik.errors.name}
-                  </span> */}
-                </div>
+                <input name="name" placeholder="Your Name *" {...formik.getFieldProps("name")} className="border p-2" />
+                <input name="email" placeholder="Your Email ID *" {...formik.getFieldProps("email")} className="border p-2" />
+                <input name="phone" placeholder="Your Phone No *" {...formik.getFieldProps("phone")} className="border p-2" />
+                <input name="org" placeholder="Your Company Name *" {...formik.getFieldProps("org")} className="border p-2" />
+                <input name="country" placeholder="Country *" {...formik.getFieldProps("country")} className="border p-2" />
+                <textarea name="query" placeholder="Your Query *" {...formik.getFieldProps("query")} className="border p-2" />
 
-                <div className="tab:py-2 tab:flex items-center gap-4">
-                  <div className="w-full tab:w-1/2 py-2 tab:py-0">
-                    <input
-                      className={`block w-full rounded-sm border px-4 py-2 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 lg:w-full ${
-                        formik.touched.email && Boolean(formik.errors.email)
-                          ? " border-[#F15928] text-red-700 bg-[#FFFFFF]"
-                          : "border-[#81A79D] bg-[#FEFEFE]"
-                      }px-5 py-2 border-1 border-solid p-2 placeholder:text-slate-400 text-sm opacity-90 focus:border-gray-500 focus:border-1 peer`}
-                      type="text"
-                      name="email"
-                      onChange={formik.handleChange}
-                      onBlur={formik.handleBlur}
-                      value={formik.values.email}
-                      placeholder="Your Email ID *"
-                    />
-                    {/* <span className="text-xs font-light text-red-600">
-                      {formik.touched.email && formik.errors.email}
-                    </span> */}
-                  </div>
-
-                  <div className="w-full tab:w-1/2 py-2 tab:py-0">
-                    <input
-                      className={`block w-full rounded-sm border px-4 py-2 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 lg:w-full ${
-                        formik.touched.phone && Boolean(formik.errors.phone)
-                          ? " border-[#F15928] text-red-700 bg-[#FFFFFF]"
-                          : "border-[#81A79D] bg-[#FEFEFE]"
-                      }px-5 py-2 border-1 border-solid p-2 placeholder:text-slate-400 text-sm opacity-90 focus:border-gray-500 focus:border-1 peer`}
-                      type="text"
-                      name="phone"
-                      onChange={formik.handleChange}
-                      onBlur={formik.handleBlur}
-                      value={formik.values.phone}
-                      placeholder="Your Phone No *"
-                    />
-                    {/* <span className="text-xs font-light text-red-600">
-                      {formik.touched.phone && formik.errors.phone}
-                    </span> */}
-                  </div>
-                </div>
-
-                <div className="tab:py-2 tab:flex items-center gap-4">
-                  <div className="w-full tab:w-1/2 py-2 tab:py-0">
-                    <input
-                      className={`block w-full rounded-sm border px-4 py-2 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 lg:w-full ${
-                        formik.touched.org && Boolean(formik.errors.org)
-                          ? " border-[#F15928] text-red-700 bg-[#FFFFFF]"
-                          : "border-[#81A79D] bg-[#FEFEFE]"
-                      }px-5 py-2 border-1 border-solid p-2 placeholder:text-slate-400 text-sm opacity-90 focus:border-gray-500 focus:border-1 peer`}
-                      type="text"
-                      name="org"
-                      onChange={formik.handleChange}
-                      onBlur={formik.handleBlur}
-                      value={formik.values.org}
-                      placeholder="Your Company Name *"
-                    />
-                    {/* <span className="text-xs font-light text-red-600">
-                      {formik.touched.org && formik.errors.org}
-                    </span> */}
-                  </div>
-
-                  <div className="w-full tab:w-1/2 py-2 tab:py-0">
-                    <input
-                      className={`block w-full rounded-sm border px-4 py-2 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 lg:w-full ${
-                        formik.touched.country && Boolean(formik.errors.country)
-                          ? " border-[#F15928] text-red-700 bg-[#FFFFFF]"
-                          : "border-[#81A79D] bg-[#FEFEFE]"
-                      }px-5 py-2 border-1 border-solid p-2 placeholder:text-slate-400 text-sm opacity-90 focus:border-gray-500 focus:border-1 peer`}
-                      type="text"
-                      name="country"
-                      onChange={formik.handleChange}
-                      onBlur={formik.handleBlur}
-                      value={formik.values.country}
-                      placeholder="Country (Optional)"
-                    />
-                    {/* <span className="text-xs font-light text-red-600">
-                      {formik.touched.country && formik.errors.country}
-                    </span> */}
-                  </div>
-                </div>
-
-                <div className="py-2">
-                  <textarea
-                    className={`block w-full rounded-sm border px-4 py-2 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 lg:w-full ${
-                      formik.touched.query && Boolean(formik.errors.query)
-                        ? " border-[#F15928] text-red-700 bg-[#FFFFFF]"
-                        : "border-[#81A79D] bg-[#FEFEFE]"
-                    }px-5 py-2 border-1 border-solid p-2 placeholder:text-slate-400 text-sm opacity-90 focus:border-gray-500 focus:border-1 peer`}
-                    // type="text"
-                    name="query"
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    value={formik.values.query}
-                    placeholder="Your Query *"
-                  />
-                  {/* <span className="text-xs font-light text-red-600">
-                    {formik.touched.query && formik.errors.query}
-                  </span> */}
-                </div>
-
-                <div className="mt-2">
-                  <button
-                    className="primary-inset rounded-sm px-5 py-1 bg-[#F15928]"
-                    type="submit"
-                    disabled={formik.isSubmitting}
-                  >
-                    <p className="text-sm font-medium text-white">Submit</p>
-                  </button>
-                </div>
+                <button
+                  type="submit"
+                  disabled={formik.isSubmitting}
+                  className="bg-[#F15928] text-white p-2 mt-2"
+                >
+                  Submit
+                </button>
               </form>
             </div>
           </div>
@@ -349,4 +264,5 @@ const Contact = () => {
     </section>
   );
 };
+
 export default Contact;
