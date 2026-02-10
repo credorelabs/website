@@ -16,6 +16,7 @@ function Home({ OnClose }) {
   const [remarks, setRemarks] = useState("");
 
   const url = process.env.NEXT_PUBLIC_URL;
+  console.log(url)
   const OTP_URL = `${url}/auth/email-verify`;
 
 
