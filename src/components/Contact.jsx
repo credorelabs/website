@@ -111,6 +111,13 @@ const Contact = () => {
                     <p className="text-sm text-gray-700 font-normal">
                       <b>Registered office:</b> Bhumkar Chowk, Pune
                     </p>
+                    <p className="text-sm text-gray-900 font-normal">
+                      (A company incorporated under the Companies Act, 2013 (India))
+                    </p>
+<p className="text-sm text-gray-700 font-normal">
+                      <b>CIN Number : </b>U72900PN2020PTC190756
+                    </p>
+
                   </div>
                 </div>
 
