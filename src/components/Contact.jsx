@@ -16,13 +16,21 @@ import Swal from "sweetalert2";
 import Form from "./RequestModal";
 
 const countries = [
-  "Australia", "Canada", "France", "Germany", "India", "Japan", "Singapore",
-  "United Arab Emirates", "United Kingdom", "United States", "Other"
+  "Australia",
+  "Canada",
+  "France",
+  "Germany",
+  "India",
+  "Japan",
+  "Singapore",
+  "United Arab Emirates",
+  "United Kingdom",
+  "United States",
+  "Other",
 ];
 
-const url=process.env.NEXT_PUBLIC_URL;
+const url = process.env.NEXT_PUBLIC_URL;
 const OTP_URL = `${url}/auth/email-verify`;
-
 
 const Contact = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,7 +45,14 @@ const Contact = () => {
   };
 
   const formik = useFormik({
-    initialValues: { name: "", email: "", phone: "", org: "", country: "", query: "" },
+    initialValues: {
+      name: "",
+      email: "",
+      phone: "",
+      org: "",
+      country: "",
+      query: "",
+    },
     validationSchema: Yup.object({
       name: Yup.string().required("Required"),
       email: Yup.string().required("Required").email("Invalid Email"),
@@ -83,70 +98,68 @@ const Contact = () => {
 
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-3xl med:text-5xl font-extrabold text-[#29564b]">Contact Us</h1>
+          <h1 className="text-3xl med:text-5xl font-extrabold text-[#29564b]">
+            Contact Us
+          </h1>
           <div className="w-16 h-1 bg-[#F15928] mx-auto mt-3 rounded-full"></div>
         </div>
 
         {/* MAIN GRID */}
         <div className="grid grid-cols-1 med:grid-cols-2 gap-10 xl:gap-16 items-start">
 
-          {/* ================= LEFT COLUMN ================= */}
+          {/* LEFT COLUMN */}
+          <div className="space-y-6">
+            <h2 className="text-2xl med:text-3xl font-bold text-[#29564b] leading-snug">
+              Let&apos;s build something <span className="text-[#F15928]">secure</span> together.
+            </h2>
 
-            {/* Info Section */}
-            <div className="space-y-6">
-              <h2 className="text-2xl med:text-3xl font-bold text-[#29564b] leading-snug">
-                Let's build something <span className="text-[#F15928]">secure</span> together.
-              </h2>
-
-              <div className="flex flex-col gap-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-white shadow-md rounded-xl flex items-center justify-center text-[#F15928] shrink-0">
-                    <MdPlace size={22} />
-                  </div>
-                  <div>
-                    {/* <h4 className="font-bold text-[#29564b]">Our Offices</h4> */}
-                    <p className="text-sm text-gray-700 font-normal">
-                      <b>Branch Office:</b> KIIT-TBI Campus 11, Bhubaneswar
-                    </p>
-                    <p className="text-sm text-gray-700 font-normal">
-                      <b>Registered office:</b> Bhumkar Chowk, Pune
-                    </p>
-                    <p className="text-sm text-gray-900 font-normal">
-                      (A company incorporated under the Companies Act, 2013 (India))
-                    </p>
-<p className="text-sm text-gray-700 font-normal">
-                      <b>CIN Number : </b>U72900PN2020PTC190756
-                    </p>
-
-                  </div>
+            <div className="flex flex-col gap-6">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 bg-white shadow-md rounded-xl flex items-center justify-center text-[#F15928] shrink-0">
+                  <MdPlace size={22} />
                 </div>
-
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 bg-white shadow-md rounded-xl flex items-center justify-center text-[#F15928] shrink-0">
-                    <MdPhone size={20} />
-                  </div>
-                  <a
-                    href="tel:+918600936299"
-                    className="font-semibold text-gray-700 hover:text-[#F15928]"
-                  >
-                    +91-86009 36299
-                  </a>
-                </div>
-
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 bg-white shadow-md rounded-xl flex items-center justify-center text-[#F15928] shrink-0">
-                    <MdEmail size={20} />
-                  </div>
-                  <a
-                    href="mailto:info@credore.xyz"
-                    className="font-semibold text-gray-700 hover:text-[#F15928]"
-                  >
-                    info@credore.xyz
-                  </a>
+                <div>
+                  <p className="text-sm text-gray-700 font-normal">
+                    <b>Branch Office:</b> KIIT-TBI Campus 11, Bhubaneswar
+                  </p>
+                  <p className="text-sm text-gray-700 font-normal">
+                    <b>Registered office:</b> Bhumkar Chowk, Pune
+                  </p>
+                  <p className="text-sm text-gray-900 font-normal">
+                    (A company incorporated under the Companies Act, 2013 (India))
+                  </p>
+                  <p className="text-sm text-gray-700 font-normal">
+                    <b>CIN Number :</b> U72900PN2020PTC190756
+                  </p>
                 </div>
               </div>
 
-                                  {/* Green Request Box */}
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 bg-white shadow-md rounded-xl flex items-center justify-center text-[#F15928] shrink-0">
+                  <MdPhone size={20} />
+                </div>
+                <a
+                  href="tel:+918600936299"
+                  className="font-semibold text-gray-700 hover:text-[#F15928]"
+                >
+                  +91-86009 36299
+                </a>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 bg-white shadow-md rounded-xl flex items-center justify-center text-[#F15928] shrink-0">
+                  <MdEmail size={20} />
+                </div>
+                <a
+                  href="mailto:info@credore.xyz"
+                  className="font-semibold text-gray-700 hover:text-[#F15928]"
+                >
+                  info@credore.xyz
+                </a>
+              </div>
+            </div>
+
+            {/* Green Request Box */}
             <div className="bg-[#29564b] p-8 rounded-3xl text-white shadow-xl relative overflow-hidden group min-h-[180px] flex flex-col justify-center">
               <div className="relative z-10">
                 <p className="text-sm text-gray-200 mb-5 leading-relaxed">
@@ -165,62 +178,97 @@ const Contact = () => {
                 size={140}
               />
             </div>
-            </div>
-          {/* ================= RIGHT COLUMN (FORM) ================= */}
+          </div>
+
+          {/* RIGHT COLUMN */}
           <div className="w-full">
             <div className="bg-white rounded-[2.5rem] p-8 med:p-10 shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-gray-100">
               <div className="mb-8">
-                <h3 className="text-2xl font-bold text-[#29564b]">Get in touch</h3>
+                <h3 className="text-2xl font-bold text-[#29564b]">
+                  Get in touch
+                </h3>
                 <p className="text-gray-400 text-sm mt-1">
-                  We'll respond to your inquiry within 24 hours.
+                  We&apos;ll respond to your inquiry within 24 hours.
                 </p>
               </div>
 
-              <form onSubmit={formik.handleSubmit} className="flex flex-col gap-5" ref={form}>
-
+              <form
+                onSubmit={formik.handleSubmit}
+                className="flex flex-col gap-5"
+                ref={form}
+              >
                 <div className="grid grid-cols-1 med:grid-cols-2 gap-5">
                   <div className="relative">
                     <MdPerson className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
-                    <input name="name" placeholder="Full Name" {...formik.getFieldProps("name")}
-                      className="w-full pl-12 pr-4 py-1 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:border-[#F15928] outline-none transition-all" />
+                    <input
+                      name="name"
+                      placeholder="Full Name"
+                      {...formik.getFieldProps("name")}
+                      className="w-full pl-12 pr-4 py-1 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:border-[#F15928] outline-none transition-all"
+                    />
                   </div>
 
                   <div className="relative">
                     <MdEmail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
-                    <input name="email" placeholder="Business Email *" {...formik.getFieldProps("email")}
-                      className="w-full pl-12 pr-4 py-1 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:border-[#F15928] outline-none transition-all" />
+                    <input
+                      name="email"
+                      placeholder="Business Email *"
+                      {...formik.getFieldProps("email")}
+                      className="w-full pl-12 pr-4 py-1 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:border-[#F15928] outline-none transition-all"
+                    />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 med:grid-cols-2 gap-5">
                   <div className="relative">
                     <MdPhone className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
-                    <input name="phone" placeholder="Phone Number *" {...formik.getFieldProps("phone")}
-                      className="w-full pl-12 pr-4 py-1 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:border-[#F15928] outline-none transition-all" />
+                    <input
+                      name="phone"
+                      placeholder="Phone Number *"
+                      {...formik.getFieldProps("phone")}
+                      className="w-full pl-12 pr-4 py-1 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:border-[#F15928] outline-none transition-all"
+                    />
                   </div>
 
                   <div className="relative">
                     <MdPublic className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
                     <MdKeyboardArrowDown className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" size={20} />
-                    <select name="country" {...formik.getFieldProps("country")}
-                      className="w-full pl-12 pr-10 py-1 bg-gray-50 border border-gray-200 rounded-xl appearance-none focus:bg-white focus:border-[#F15928] outline-none transition-all text-gray-600">
-                      <option value="" disabled>Select Country *</option>
-                      {countries.map(c => <option key={c} value={c}>{c}</option>)}
+                    <select
+                      name="country"
+                      {...formik.getFieldProps("country")}
+                      className="w-full pl-12 pr-10 py-1 bg-gray-50 border border-gray-200 rounded-xl appearance-none focus:bg-white focus:border-[#F15928] outline-none transition-all text-gray-600"
+                    >
+                      <option value="" disabled>
+                        Select Country *
+                      </option>
+                      {countries.map((c) => (
+                        <option key={c} value={c}>
+                          {c}
+                        </option>
+                      ))}
                     </select>
                   </div>
                 </div>
 
                 <div className="relative">
                   <MdBusiness className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
-                  <input name="org" placeholder="Company Name *" {...formik.getFieldProps("org")}
-                    className="w-full pl-12 pr-4 py-1 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:border-[#F15928] outline-none transition-all" />
+                  <input
+                    name="org"
+                    placeholder="Company Name *"
+                    {...formik.getFieldProps("org")}
+                    className="w-full pl-12 pr-4 py-1 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:border-[#F15928] outline-none transition-all"
+                  />
                 </div>
 
                 <div className="relative">
                   <MdMessage className="absolute left-4 top-5 text-gray-400" size={18} />
-                  <textarea name="query" rows="3" placeholder="How can we help you? *"
+                  <textarea
+                    name="query"
+                    rows="3"
+                    placeholder="How can we help you? *"
                     {...formik.getFieldProps("query")}
-                    className="w-full pl-12 pr-4 py-1 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:border-[#F15928] outline-none transition-all resize-none" />
+                    className="w-full pl-12 pr-4 py-1 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:border-[#F15928] outline-none transition-all resize-none"
+                  />
                 </div>
 
                 <button
@@ -230,7 +278,6 @@ const Contact = () => {
                 >
                   {formik.isSubmitting ? "SENDING..." : "SEND MESSAGE"}
                 </button>
-
               </form>
             </div>
           </div>
