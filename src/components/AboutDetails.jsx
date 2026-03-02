@@ -1,7 +1,3 @@
-import React from "react";
-import VideoSection from "./VideoSection";
-import Image from "next/image";
-import HowCredoreHelps from "../../public/assets/images/how-credore-helps.png";
 import CredoreSteps from "./CredoreSteps";
 
 const AboutDetails = () => {
