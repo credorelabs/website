@@ -12,7 +12,7 @@ const Technology = () => {
               interaction within financial supply chain management transactions
               in international trade becomes verifiable, non-repudiable,
               retrotraceable, accountable, and auditable for any necessary
-              retention period.
+              retention period. 
             </div>
 
             <div className="mb-5 font-medium">
