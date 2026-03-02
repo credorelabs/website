@@ -86,7 +86,7 @@ const Footer = () => {
                     className="p-2 py-1 border-[0.5px] md:round border-[#F15928] outline-none text-sm br-5"
                     placeholder="Enter Your Email"
                     value=""
-                    onChange={() => {}}
+                    onChange={() => { }}
                   />
                   <button
                     className="px-4 py-1 text-sm flex-shrink-0 text-F15928 bg-[#F15928]"
@@ -97,6 +97,13 @@ const Footer = () => {
                 </div>
               </div>
             </div>
+          </div>
+          <div className="text-xs text-center">
+            Credore is operated by Trustless Private Limited (CIN: U72900PN2020PTC190756),
+            a company incorporated under the Companies Act, 2013 (India).
+
+            Registered Office: Pune, Maharashtra, India
+            Branch Office: 108 A, KIIT TBI, Patia, Bhubaneswar, Odisha, India
           </div>
 
           <div className="copyrightSectn">
