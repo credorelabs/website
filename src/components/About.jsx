@@ -13,7 +13,7 @@ const About = () => {
           <div className="detailSecBx p-5 w-full">
             <div className="p-5 pl-0">
               <h1>How Credore Helps</h1>
-            </div>
+            </div> 
 
             {/* <div className="heading">
               Transforming Financial Supply Chain Management: Unlocking
