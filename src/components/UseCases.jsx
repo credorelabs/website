@@ -1,9 +1,4 @@
-import React, { useState } from "react";
-import useCaseData from "../constants/useCasesData.json";
-import VideoSection from "./VideoSection";
-import Image from "next/image";
-import useCaseFlow from "../../public/assets/images/use-cases/usecase-flow.png";
-import exporter from "../../public/assets/images/use-cases/exporter.png";
+import { useState } from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { VscExpandAll } from "react-icons/vsc";
 
@@ -277,7 +272,11 @@ const UseCases = () => {
             <div className="flex gap-2 p-2">
               <div className="p-2 pb-1 border-[0.5px] border-gray-500 rounded-md">
                 {/* <Image src={exporter} alt="" /> */}
-                <Image src={useCaseFlow} alt="" className="rounded-md" />
+                <img
+                  src="/assets/images/use-cases/usecase-flow.png"
+                  alt="Use Case Flow"
+                  className="rounded-md"
+                />
               </div>
             </div>
 
