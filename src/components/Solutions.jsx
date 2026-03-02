@@ -1,9 +1,4 @@
 import React from "react";
-import Image from "next/image";
-// import {suppliers, banks, corporates} from "../constants/assets";
-import suppliers from "./../../public/assets/images/suppliers.png";
-import banks from "./../../public/assets/images/banks.png";
-import corporates from "./../../public/assets/images/corporates.png";
 
 const Solutions = () => {
   return (
@@ -22,10 +17,16 @@ const Solutions = () => {
             velocity, and new business opportunities, all within a more secure
             and compliant trade finance environment.
           </div>
+
           <div className="otherDetails">
+            {/* Suppliers */}
             <div className="tile">
               <figure>
-                <Image src={suppliers} alt="" className="img-responsive" />
+                <img
+                  src="/assets/images/suppliers.png"
+                  alt="Suppliers"
+                  className="img-responsive"
+                />
               </figure>
               <div className="tileHEading">for Suppliers</div>
               <div className="tiletxt">
@@ -35,11 +36,19 @@ const Solutions = () => {
                 GLEIF and ICC-DSI compatibility, even without credit history.
               </div>
             </div>
+
+            {/* Banks */}
             <div className="tile">
               <figure>
-                <Image src={banks} alt="exprt-img" className="img-responsive" />
+                <img
+                  src="/assets/images/banks.png"
+                  alt="Financial Institutions"
+                  className="img-responsive"
+                />
               </figure>
-              <div className="tileHEading">for Financial Institutions</div>
+              <div className="tileHEading">
+                for Financial Institutions
+              </div>
               <div className="tiletxt">
                 Credore&apos;s corporate solution ensures accurate payments and
                 cost reduction through efficient deduplication of invoices,
@@ -47,11 +56,13 @@ const Solutions = () => {
                 streamlined payment processing and collaboration.
               </div>
             </div>
+
+            {/* Corporates */}
             <div className="tile">
               <figure>
-                <Image
-                  src={corporates}
-                  alt="exprt-img"
+                <img
+                  src="/assets/images/corporates.png"
+                  alt="Corporates"
                   className="img-responsive"
                 />
               </figure>
@@ -64,14 +75,10 @@ const Solutions = () => {
               </div>
             </div>
           </div>
-          {/* <div className="btnBx">
-            <button type="button" className="btn-primary speak-expert">
-              View Details
-            </button>
-          </div> */}
         </div>
       </div>
     </section>
   );
 };
+
 export default Solutions;
