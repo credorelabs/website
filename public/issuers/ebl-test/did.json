@@ -1,0 +1,21 @@
+{
+  "id": "did:web:credore.xyz:issuers:ebl-test",
+  "verificationMethod": [
+    {
+      "id": "did:web:credore.xyz:issuers:ebl-test#keys-1",
+      "type": "Multikey",
+      "controller": "did:web:credore.xyz:issuers:ebl-test",
+      "publicKeyMultibase": "zDnaeRq1uG4LQXSMGFmu3JoL4qWWwoGus268dorBpVEAaWkaM"
+    }
+  ],
+  "@context": [
+    "https://www.w3.org/ns/did/v1",
+    "https://w3id.org/security/multikey/v1"
+  ],
+  "authentication": [
+    "did:web:credore.xyz:issuers:ebl-test#keys-1"
+  ],
+  "assertionMethod": [
+    "did:web:credore.xyz:issuers:ebl-test#keys-1"
+  ]
+}
