@@ -5,7 +5,7 @@
       "id": "did:web:credore.xyz:issuers:ebl-test#keys-1",
       "type": "Multikey",
       "controller": "did:web:credore.xyz:issuers:ebl-test",
-      "publicKeyMultibase": "zDnaeRq1uG4LQXSMGFmu3JoL4qWWwoGus268dorBpVEAaWkaM"
+      "publicKeyMultibase": "zDnaejrhtcqkwUuj5yMv8rXeX1FKkiCFnRyxWhttHbaQxtv1w"
     }
   ],
   "@context": [
