@@ -5,7 +5,7 @@
       "id": "did:web:credore.xyz:issuers:ebl-test#keys-1",
       "type": "Multikey",
       "controller": "did:web:credore.xyz:issuers:ebl-test",
-      "publicKeyMultibase": "zDnaejrhtcqkwUuj5yMv8rXeX1FKkiCFnRyxWhttHbaQxtv1w"
+      "publicKeyMultibase": "zDnaebwd5FAZrQk2b2NpBbsA3RKbCY9Afrt2xwYpPcRKJm6GZ"
     }
   ],
   "@context": [
@@ -16,6 +16,12 @@
     "did:web:credore.xyz:issuers:ebl-test#keys-1"
   ],
   "assertionMethod": [
+    "did:web:credore.xyz:issuers:ebl-test#keys-1"
+  ],
+  "capabilityInvocation": [
+    "did:web:credore.xyz:issuers:ebl-test#keys-1"
+  ],
+  "capabilityDelegation": [
     "did:web:credore.xyz:issuers:ebl-test#keys-1"
   ]
 }
