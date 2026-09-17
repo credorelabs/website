@@ -3,6 +3,94 @@
     "@version": 1.1,
     "@protected": true,
 
-    "dcsaBlNumber": "https://credore.xyz/terms#dcsaBlNumber"
+    "dcsaBlNumber": "https://credore.xyz/terms#dcsaBlNumber",
+    "transportDocumentSubReference": "https://credore.xyz/terms#transportDocumentSubReference",
+    "shippingInstructionsReference": "https://credore.xyz/terms#shippingInstructionsReference",
+    "isShippedOnBoardType": "https://credore.xyz/terms#isShippedOnBoardType",
+    "carrierClause": "https://credore.xyz/terms#carrierClause",
+
+    "containerType": "https://credore.xyz/terms#containerType",
+    "numberOfContainer": "https://credore.xyz/terms#numberOfContainer",
+    "containerSize": "https://credore.xyz/terms#containerSize",
+    "containerNumber": "https://credore.xyz/terms#containerNumber",
+    "temperature": "https://credore.xyz/terms#temperature",
+    "humidity": "https://credore.xyz/terms#humidity",
+    "ventilation": "https://credore.xyz/terms#ventilation",
+
+    "contractQuoteReferenceNumber": "https://credore.xyz/terms#contractQuoteReferenceNumber",
+    "serviceContractReference": "https://credore.xyz/terms#serviceContractReference",
+    "expectedArrivalAtPlaceOfDeliveryStartDate": "https://credore.xyz/terms#expectedArrivalAtPlaceOfDeliveryStartDate",
+    "expectedArrivalAtPlaceOfDeliveryEndDate": "https://credore.xyz/terms#expectedArrivalAtPlaceOfDeliveryEndDate",
+    "expectedDepartureDate": "https://credore.xyz/terms#expectedDepartureDate",
+
+    "goods_HSCode": "https://credore.xyz/terms#goods_HSCode",
+    "goods_descriptionOfGoods": "https://credore.xyz/terms#goods_descriptionOfGoods",
+
+    "location_placeOfDelivery": "https://credore.xyz/terms#location_placeOfDelivery",
+    "location_placeOfReceipt": "https://credore.xyz/terms#location_placeOfReceipt",
+    "location_portOfDischarge": "https://credore.xyz/terms#location_portOfDischarge",
+    "location_portOfLoading": "https://credore.xyz/terms#location_portOfLoading",
+
+    "terms": "https://credore.xyz/terms#terms",
+    "transport_IMOvesselNumber": "https://credore.xyz/terms#transport_IMOvesselNumber",
+    "transport_vesselName": "https://credore.xyz/terms#transport_vesselName",
+    "invoicePayableAt": "https://credore.xyz/terms#invoicePayableAt",
+    "placeOfIssue": "https://credore.xyz/terms#placeOfIssue",
+
+    "importerCompanyName": "https://credore.xyz/terms#importerCompanyName",
+    "importerName": "https://credore.xyz/terms#importerName",
+    "importer_email": "https://credore.xyz/terms#importer_email",
+    "importer_phone": "https://credore.xyz/terms#importer_phone",
+    "importer_lei": "https://credore.xyz/terms#importer_lei",
+    "importerAddress": "https://credore.xyz/terms#importerAddress",
+
+    "exporterCompanyName": "https://credore.xyz/terms#exporterCompanyName",
+    "exporterAddress": "https://credore.xyz/terms#exporterAddress",
+    "exporterName": "https://credore.xyz/terms#exporterName",
+    "exporterEmail": "https://credore.xyz/terms#exporterEmail",
+    "exporterPhone": "https://credore.xyz/terms#exporterPhone",
+    "exporterLei": "https://credore.xyz/terms#exporterLei",
+
+    "carrier_name": "https://credore.xyz/terms#carrier_name",
+    "carrier_contact_name": "https://credore.xyz/terms#carrier_contact_name",
+    "carrier_address": "https://credore.xyz/terms#carrier_address",
+    "carrier_contact_email": "https://credore.xyz/terms#carrier_contact_email",
+    "carrier_contact_phone": "https://credore.xyz/terms#carrier_contact_phone",
+    "carrier_lei": "https://credore.xyz/terms#carrier_lei",
+
+    "notify_name": "https://credore.xyz/terms#notify_name",
+    "notify_contact_name": "https://credore.xyz/terms#notify_contact_name",
+    "notify_address": "https://credore.xyz/terms#notify_address",
+    "notify_contact_email": "https://credore.xyz/terms#notify_contact_email",
+    "notify_contact_phone": "https://credore.xyz/terms#notify_contact_phone",
+    "notify_lei": "https://credore.xyz/terms#notify_lei",
+
+    "other_name": "https://credore.xyz/terms#other_name",
+    "other_contact_name": "https://credore.xyz/terms#other_contact_name",
+    "other_address": "https://credore.xyz/terms#other_address",
+    "other_contact_email": "https://credore.xyz/terms#other_contact_email",
+    "other_contact_phone": "https://credore.xyz/terms#other_contact_phone",
+    "other_lei": "https://credore.xyz/terms#other_lei",
+
+    "carrierSignIp": "https://credore.xyz/terms#carrierSignIp",
+    "carrierSignTime": "https://credore.xyz/terms#carrierSignTime",
+
+    "documentType": "https://credore.xyz/terms#documentType",
+    "documentReferenceNumber": "https://credore.xyz/terms#documentReferenceNumber",
+    "sealNumber": "https://credore.xyz/terms#sealNumber",
+    "tokenRegistryAddress": "https://credore.xyz/terms#tokenRegistryAddress",
+
+    "primaryLogo": "https://credore.xyz/terms#primaryLogo",
+    "secondaryLogo": "https://credore.xyz/terms#secondaryLogo",
+
+    "currency": "https://credore.xyz/terms#currency",
+    "valueCurrency": "https://credore.xyz/terms#valueCurrency",
+
+    "preCarriageBy": "https://credore.xyz/terms#preCarriageBy",
+    "onCarriageBy": "https://credore.xyz/terms#onCarriageBy",
+
+    "numberOfPackages": "https://credore.xyz/terms#numberOfPackages",
+    "grossWeight": "https://credore.xyz/terms#grossWeight",
+    "grossWeightUnit": "https://credore.xyz/terms#grossWeightUnit"
   }
 }
