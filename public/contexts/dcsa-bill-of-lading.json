@@ -78,6 +78,9 @@
     "issueDate": "https://credore.xyz/terms#issueDate",
     "placeOfTranshipment": "https://credore.xyz/terms#placeOfTranshipment",
     "corridor": "https://credore.xyz/terms#corridor",
-    "carrierSignLocation": "https://credore.xyz/terms#carrierSignLocation"
+    "carrierSignLocation": "https://credore.xyz/terms#carrierSignLocation",
+    "carrierSignerPlace": "https://credore.xyz/terms#carrierSignerPlace",
+    "blockchainName": "https://credore.xyz/terms#blockchainName"
+
   }
 }
