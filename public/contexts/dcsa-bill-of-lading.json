@@ -80,7 +80,9 @@
     "corridor": "https://credore.xyz/terms#corridor",
     "carrierSignLocation": "https://credore.xyz/terms#carrierSignLocation",
     "carrierSignerPlace": "https://credore.xyz/terms#carrierSignerPlace",
-    "blockchainName": "https://credore.xyz/terms#blockchainName"
+    "blockchainName": "https://credore.xyz/terms#blockchainName",
+    "dateOfAcceptance": "https://credore.xyz/terms#dateOfAcceptance",
+    "placeOfAcceptance": "https://credore.xyz/terms#placeOfAcceptance"
 
   }
 }
