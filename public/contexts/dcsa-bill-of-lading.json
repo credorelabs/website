@@ -1,3 +1,4 @@
+
 {
   "@context": {
     "@version": 1.1,
@@ -83,7 +84,6 @@
     "blockchainName": "https://credore.xyz/terms#blockchainName",
     "dateOfAcceptance": "https://credore.xyz/terms#dateOfAcceptance",
     "placeOfAcceptance": "https://credore.xyz/terms#placeOfAcceptance",
-
     "documentNumber": "https://credore.xyz/terms#documentNumber",
     "referenceNumber": "https://credore.xyz/terms#referenceNumber",
     "documentVersion": "https://credore.xyz/terms#documentVersion",
@@ -115,18 +115,71 @@
     "scac": "https://credore.xyz/terms#scac",
     "shippedOnDeck": "https://credore.xyz/terms#shippedOnDeck",
     "termsAndConditions": "https://credore.xyz/terms#termsAndConditions",
-    "parties": "https://credore.xyz/terms#parties",
-    "carrier": "https://credore.xyz/terms#carrier",
-    "shipper": "https://credore.xyz/terms#shipper",
-    "consignee": "https://credore.xyz/terms#consignee",
-    "notifyParty": "https://credore.xyz/terms#notifyParty",
-    "issuedToParty": "https://credore.xyz/terms#issuedToParty",
-    "contactName": "https://credore.xyz/terms#contactName",
-    "organizationName": "https://credore.xyz/terms#organizationName",
-    "email": "https://credore.xyz/terms#email",
-    "lei": "https://credore.xyz/terms#lei",
-    "phone": "https://credore.xyz/terms#phone",
-    "organisationId": "https://credore.xyz/terms#organisationId",
+    "parties": {
+      "@id": "https://credore.xyz/terms#parties",
+      "@context": {
+        "carrier": {
+          "@id": "https://credore.xyz/terms#carrier",
+          "@context": {
+            "contactName": "https://credore.xyz/terms#contactName",
+            "organizationName": "https://credore.xyz/terms#organizationName",
+            "address": "https://credore.xyz/terms#address",
+            "email": "https://credore.xyz/terms#email",
+            "lei": "https://credore.xyz/terms#lei",
+            "phone": "https://credore.xyz/terms#phone",
+            "organisationId": "https://credore.xyz/terms#organisationId"
+          }
+        },
+        "shipper": {
+          "@id": "https://credore.xyz/terms#shipper",
+          "@context": {
+            "contactName": "https://credore.xyz/terms#contactName",
+            "organizationName": "https://credore.xyz/terms#organizationName",
+            "address": "https://credore.xyz/terms#address",
+            "email": "https://credore.xyz/terms#email",
+            "lei": "https://credore.xyz/terms#lei",
+            "phone": "https://credore.xyz/terms#phone",
+            "organisationId": "https://credore.xyz/terms#organisationId"
+          }
+        },
+        "consignee": {
+          "@id": "https://credore.xyz/terms#consignee",
+          "@context": {
+            "contactName": "https://credore.xyz/terms#contactName",
+            "organizationName": "https://credore.xyz/terms#organizationName",
+            "address": "https://credore.xyz/terms#address",
+            "email": "https://credore.xyz/terms#email",
+            "lei": "https://credore.xyz/terms#lei",
+            "phone": "https://credore.xyz/terms#phone",
+            "organisationId": "https://credore.xyz/terms#organisationId"
+          }
+        },
+        "notifyParty": {
+          "@id": "https://credore.xyz/terms#notifyParty",
+          "@context": {
+            "contactName": "https://credore.xyz/terms#contactName",
+            "organizationName": "https://credore.xyz/terms#organizationName",
+            "address": "https://credore.xyz/terms#address",
+            "email": "https://credore.xyz/terms#email",
+            "lei": "https://credore.xyz/terms#lei",
+            "phone": "https://credore.xyz/terms#phone",
+            "organisationId": "https://credore.xyz/terms#organisationId"
+          }
+        },
+        "issuedToParty": {
+          "@id": "https://credore.xyz/terms#issuedToParty",
+          "@context": {
+            "contactName": "https://credore.xyz/terms#contactName",
+            "organizationName": "https://credore.xyz/terms#organizationName",
+            "address": "https://credore.xyz/terms#address",
+            "email": "https://credore.xyz/terms#email",
+            "lei": "https://credore.xyz/terms#lei",
+            "phone": "https://credore.xyz/terms#phone",
+            "organisationId": "https://credore.xyz/terms#organisationId"
+          }
+        }
+      }
+    },
     "ip": "https://credore.xyz/terms#ip",
     "carrier_signer_place": "https://credore.xyz/terms#carrier_signer_place"
   }
